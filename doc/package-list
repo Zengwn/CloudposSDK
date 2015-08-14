@@ -1,0 +1,10 @@
+com.unionpay.cloudpos
+com.unionpay.cloudpos.rfcardreader
+com.unionpay.cloudpos.hsm
+com.unionpay.cloudpos.idcardreader
+com.unionpay.cloudpos.led
+com.unionpay.cloudpos.msr
+com.unionpay.cloudpos.pinpad
+com.unionpay.cloudpos.printer
+com.unionpay.cloudpos.serialport
+com.unionpay.cloudpos.smartcardreader

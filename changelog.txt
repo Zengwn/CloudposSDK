@@ -1,0 +1,35 @@
+2015-06-24  New feature[pengli]   	增加接口文档的思维导图     
+2015-07-14  New feature[pengli]   	按照思维导图和讨论所需要求修改接口定义。
+2015-07-14  Improvement[pengli] 	修改部分方法名
+2015-07-14  Improvement[pengli]	更新思维导图
+2015-07-20 Improvement[pengli]  	更新部分Exception的code 名字。
+2015-07-21 Improvement[pengli]  	1:在对led的操作过程中可能会产生多个ledDevice对象。但每一个ledDevice都会有一个getDeviceSpec()来获得所有led设备的特性，从逻辑上会出现小包括大的问题。因此将device的getDeviceSpec();接口移到POSTerminal中去，从而避免这个问题。
+																			src/com/unionpay/cloudpos/Device.java
+																			src/com/unionpay/cloudpos/POSTerminal.java
+																	2:leddevice 中加入getLogicalID方法来获得当前设备的LogicalID
+																	        src/com/unionpay/cloudpos/led/LEDDevice.java
+2015-07-21 Improvement[pengli]  	增加打印接口中的查询纸张接口。
+2015-07-22 Improvement[pengli]	更新pinpad的接口
+																	1：增加keyinfo方法来替代selectKey方法。
+																	2：去除修改密码接口的方法。
+																	3：增加部分接口注释
+2015-07-22 Improvement[pengli]	根据会议修改方法和遗漏下来的风格不一致问题。
+								1：AlgorithmConstants 中常量名缩写不统一。
+								2：修改打印接口的格式控制函数。
+								3：修正数据错误格式
+								4：修改KeyInfo属性权限
+2015-07-27 Improvement[pengli]	增加非接卡与接触式IC卡的类图并按照类图实现接口
+2015-08-05 Improvement[pengli]	检查所有接口的方法的参数名，并修改不符合java命名方式的参数名。
+2015-08-12 Improvement[pengli]	将接口提取成基本类的原则。
+								1：和设备操作相关的接口保持接口模式。
+								2：对和设备无关的接口改造成类。
+									IDCard
+									ATR
+									DeviceException
+									POSTerminal
+									MoneyValue
+									Format
+								会议提出的三个类(AlgorithmConstants,TimeConstants,Format)中有两个不适合设置成类的。																
+									AlgorithmConstants
+									TimeConstants
+									原因是这两个类里面仅仅只有常量，没有方法，所以没有必要改成实体类。
