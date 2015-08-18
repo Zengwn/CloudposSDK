@@ -11,11 +11,9 @@
 package com.unionpay.cloudpos;
 
 /**
- * <b>Device</b>接口是所有设备的根类。所有的设备的接口 和实现类都必须继承至这个接口。
- * <p>这个类定义了设备的打开方法open(),使用设备默认的ID打开设备。如果再去打开一个已经被打开的设备，程序会抛出异常{@link DeviceException#BAD_CONTROL_MODE BAD_CONTROL_MODE}。
- * <p>定义了关闭方法close(),可以关闭已经打开的设备。但如果设备对象有异步方法在执行时，去关闭设备，程序会抛出异常{@link DeviceException#REQUEST_PENDING REQUEST_PENDING}。
- * <p>定义了取消方法cancelRequest(),可以取消执行中的异步操作的方法。如果没有异步方法正在被执行，去取消，程序会抛出异常{@link DeviceException#NO_REQUEST_PENDING NO_REQUEST_PENDING}。
- * <p>所有的应用程序都使用各种<b>Device对象</b>来操作各种设备。一般来说， 每个设备只能同时被一个设备对象打开和使用。
+ * <b>Device</b>接口是所有设备的根类。所有的设备的接口 和实现类都必须继承至这个接口。 
+ * <p>所有的应用程序都使用各种<b>Device对象</b>来操作各种设备。 每个设备只能同时被一个设备对象打开和使用。如果设备带有逻辑上的设备分类，每个逻辑上的设备分类也只能被被一个设备对象打开和使用。
+ * 例如磁条卡阅读器有不同卡槽，每个卡槽就相当于一个独占设备。
  * <p>以下情况是不允许的：
  * <ul>
  * <li>设备对象已经打开了某个逻辑ID的设备，再去打开同一个逻辑ID或不同逻辑ID的设备。
@@ -30,6 +28,7 @@ public interface Device {
 
     /**
      * 设备对象使用默认ID打开设备，即建立与设备的连接。设备只有在打开之后才能进行后续的操作。
+     * <p>没有调用设备对象的打开接口之前，调用设备对象的其他接口，会抛出异常{@link DeviceException#BAD_CONTROL_MODE BAD_CONTROL_MODE}。
      * <p>同一个设备在打开之后，不能再次打开。否则会抛出异常{@link DeviceException#BAD_CONTROL_MODE BAD_CONTROL_MODE}。如下两种情况是不允许的：
      * <ul>
      * <li>一个设备对象在已经打开设备的情况下，试图再次打开该设备。

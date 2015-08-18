@@ -14,13 +14,32 @@ package com.unionpay.cloudpos;
  * @date August 06, 2015
  */
 public interface TerminalSpec {
-    String getManufacturer();
-
+    /**
+     * 返回厂商
+     * @return
+     */
+	String getManufacturer();
+	
+    /**
+     * 返回终端型号
+     * @return 手持，pad或台式
+     */
     String getModel();
-
-    String getOSVersion();
-
-    String getAPILevel();
     
+    /**
+     * 返回终端操作系统版本。
+     * @return 版本
+     */
+    String getOSVersion();
+    
+    /**
+     * 返回API版本。
+     * @return API版本
+     */
+    String getAPILevel();
+    /**
+     * 返回终端序列号。
+     * @return 序列号
+     */
     String getSerialNumber();
 }
