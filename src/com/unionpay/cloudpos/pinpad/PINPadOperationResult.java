@@ -13,9 +13,9 @@ package com.unionpay.cloudpos.pinpad;
 import com.unionpay.cloudpos.OperationResult;
 
 /**
- * 密码键盘的操作结果对象
+ * PIN输入设备的操作结果对象
  * <p>{@link OperationResult#getResultCode() getResultCode()}方法继承至{@link OperationResult}的对应方法。
- * <p>通过{@link OperationResult#getResultCode() getResultCode()}返回密码键盘的结果状态 ，
+ * <p>通过{@link OperationResult#getResultCode() getResultCode()}返回PIN输入设备的结果状态 ，
  * 通过{@link PINPadOperationResult#getEncryptedPINBlock() getEncryptedPINBlock()}返回加过密的PIN Block。
  * @date August 10, 2015 
  */

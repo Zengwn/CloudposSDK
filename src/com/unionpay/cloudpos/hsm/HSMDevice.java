@@ -75,7 +75,7 @@ public interface HSMDevice extends Device{
     public static final int CERT_TYPE_COMM_ROOT = 4;
     /**
      * 打开某个逻辑ID的安全模块设备。
-     * 
+     * <p>安全模块设备是一种特殊的独占设备，一旦某个具有读写权限的应用打开本设备后，本设备不能再被其他具有读写权限的应用打开，但是本设备可以被多个具有只读权限的应用同时打开。
      * @param logicalID  安全模块逻辑ID。
      *
      * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档。
@@ -183,6 +183,18 @@ public interface HSMDevice extends Device{
      * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档。
      */
     boolean deleteCertificate(int certType, String alias) throws DeviceException;
+    
+    /**
+     * 从硬件证书管理与加密运算模块内查询证书。     
+     * <br>
+     * 该操作需要读权限。
+     * 
+     * @param certType      证书类型。
+     * @return 证书别名数组。
+     * @throws DeviceException 查询失败 
+     * 具体定义参考{@link DeviceException DeviceException}的文档。
+     */
+    String[] queryCertificates(int certType) throws DeviceException;
 
     /**
      * 删除终端私钥（密钥对）。

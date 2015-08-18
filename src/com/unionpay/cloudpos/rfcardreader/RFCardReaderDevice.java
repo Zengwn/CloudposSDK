@@ -17,17 +17,17 @@ import com.unionpay.cloudpos.OperationResult;
 import com.unionpay.cloudpos.TimeConstants;
 
 /**
- * <b>RFCardReaderDevice</b>定义了所有非接卡设备的接口。
+ * <b>RFCardReaderDevice</b>定义了所有非接触式IC卡阅读器的接口。
  * <p>设备对象通过<code>POSTerminal</code>的对应方法获得，如下所示：
  * <pre>
  * RFCardReaderDevice rFCardReaderDevice =
  *         (RFCardReaderDevice) POSTerminal.getInstance().getDevice("cloudpos.device.contactlesscard");
  * </pre>
  * 其中，"cloudpos.device.contactlesscard"是标识非接读卡器的字符串，由具体的实现定义。
- * <p>非接卡设备对象主要进行非接卡读卡操作。其中等卡及移卡都包括同步和异步两种方式。同步方式会将主线程锁定，直到有结果返回，超时或者被取消。
+ * <p>非接触式IC卡阅读器对象主要进行非接卡读卡操作。其中等卡及移卡都包括同步和异步两种方式。同步方式会将主线程锁定，直到有结果返回，超时或者被取消。
  * 异步方式不会锁定主线程，当有结果时，会回调监听者{@link OperationListener#handleResult(OperationResult) handleResult()}方法。 
  * <p>
- * 为了正常访问非接卡设备，请在Android Manifest文件中设置非接卡设备访问权限，具体如下所示：
+ * 为了正常访问非接触式IC卡阅读器，请在Android Manifest文件中设置非接触式IC卡阅读器访问权限，具体如下所示：
  * <pre> &lt;uses-permission android:name="android.permission.CLOUDPOS_CONTACTLESS_CARD"/>
  * </pre> 
  * @see Device
@@ -108,7 +108,7 @@ public interface RFCardReaderDevice extends Device, TimeConstants {
     int RATE_6670K = 64;
 
     /**
-     * 打开某个逻辑ID的非接卡设备，并指定模式。只有符合模式的卡会被发现。
+     * 打开某个逻辑ID的非接触式IC卡阅读器，并指定模式。只有符合模式的卡会被发现。
      * <p>
      * 
      * @param logicalID 读卡器逻辑ID

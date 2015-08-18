@@ -46,7 +46,7 @@ public interface RFCardReaderOperationResult extends OperationResult
    int ERR_CARD_UNREACHABLE = ERR_DEVICE_BASE - 3;
    
    /**
-    * 多张卡片被放入非接设备
+    * 多张卡片被放入非接触式IC卡阅读器
     * */
    int ERR_MULTI_CARD = ERR_DEVICE_BASE - 4;
 

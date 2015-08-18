@@ -17,28 +17,28 @@ import com.unionpay.cloudpos.OperationResult;
 import com.unionpay.cloudpos.TimeConstants;
 
 /**
- * <b>MSRDevice</b>定义了对磁条卡读卡器的操作方法。任何具体的实现都必须实现这个接口。
+ * <b>MSRDevice</b>定义了对磁条卡阅读器的操作方法。任何具体的实现都必须实现这个接口。
  * <p>设备对象通过<code>POSTerminal</code>的对应方法获得，如下所示：
  * <pre>
  * MSRDevice msrDevice =
  *         (MSRDevice) POSTerminal.getInstance().getDevice("cloudpos.device.msr");
  * </pre>
- * 其中，"cloudpos.device.msr"是标识磁条卡读卡器的字符串，由具体的实现定义。
- * <p>磁条卡设备对象主要进行刷卡操作。其中等待刷卡包括同步和异步两种方式。同步方式会将主线程锁定，直到有结果返回，超时或者被取消。
+ * 其中，"cloudpos.device.msr"是标识磁条卡阅读器的字符串，由具体的实现定义。
+ * <p>磁条卡阅读器设备对象主要进行刷卡操作。其中等待刷卡包括同步和异步两种方式。同步方式会将主线程锁定，直到有结果返回，超时或者被取消。
  * 异步方式不会锁定主线程，当有结果时，会回调监听者{@link OperationListener#handleResult(OperationResult) handleResult()}方法。
  * <p>
- * 为了正常访问磁条卡读卡器，请在Android Manifest文件中设置磁条卡读卡器访问权限，具体如下所示：
+ * 为了正常访问磁条卡阅读器，请在Android Manifest文件中设置磁条卡阅读器访问权限，具体如下所示：
  * <pre> &lt;uses-permission android:name="android.permission.CLOUDPOS_MSR"/>
  * </pre>
  * @date August 06, 2015
  */
 public interface MSRDevice extends Device, TimeConstants {
     /**
-     * 打开某个逻辑ID的磁条卡读卡器 。
-     * <p>打开成功，设备对象就和相应的逻辑ID的磁条卡读卡器建立了连接。此后可以进行后面的各项操作。
-     * <p>设备对象去打开某个已经打开（被当前设备对象或其他设备对象）的逻辑ID的磁条卡读卡器会抛出异常{@link DeviceException#BAD_CONTROL_MODE BAD_CONTROL_MODE}。
-     * <p>设备对象打开某个逻辑ID的磁条卡读卡器，再打开另外一个逻辑ID的磁条卡读卡器，会抛出异常{@link DeviceException#BAD_CONTROL_MODE BAD_CONTROL_MODE}。
-     * @param logicalID 读卡器逻辑ID，默认是1。
+     * 打开磁条卡阅读器的指定卡槽 。
+     * <p>打开成功，设备对象就和相应的磁条卡阅读器的卡槽建立了连接。此后可以进行后面的各项操作。
+     * <p>设备对象去打开某个已经打开（被当前设备对象或其他设备对象）的磁条卡阅读器的卡槽会抛出异常{@link DeviceException#BAD_CONTROL_MODE BAD_CONTROL_MODE}。
+     * <p>设备对象打开磁条卡阅读器的某个卡槽，再打开该磁条卡阅读器的另外一个卡槽，会抛出异常{@link DeviceException#BAD_CONTROL_MODE BAD_CONTROL_MODE}。
+     * @param logicalID 读卡器逻辑ID（卡槽ID），默认是1。
      * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档。
      * @throws IllegalArgumentException 输入参数为非法读卡器逻辑ID。
      */

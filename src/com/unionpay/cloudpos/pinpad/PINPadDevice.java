@@ -17,16 +17,18 @@ import com.unionpay.cloudpos.OperationResult;
 import com.unionpay.cloudpos.TimeConstants;
 
 /**
- * <b>PINPadDevice</b>定义了密码键盘设备的接口。
+ * <b>PINPadDevice</b>定义了PIN输入设备的接口。
+ * <p>PIN输入设备是智能销售点终端的核心组件之一，用于加密持卡人的PIN、计算交易报文MAC，加解密数据等，可做为共享资源供终端上所有应用使用。
+ * 为了唯一标识PIN输入设备中的终端主密钥，PIN输入设备为每一套终端主密钥分配了一个密钥索引号。PIN输入设备的详细描述参考《银联卡受理终端安全规范-第8部分-智能销售点终端安全规范》
  * <p>设备对象通过<code>POSTerminal</code>的对应方法获得，如下所示：
  * <pre>
  * PINPadDevice pinPadDevice =
  *         (PINPadDevice) POSTerminal.getInstance().getDevice("cloudpos.device.pinpad");
  * </pre>
- * 其中，"cloudpos.device.pinpad"是标识密码键盘设备的字符串，由具体的实现定义。
- * <p>使用密码键盘设备对象，可以在密码键盘上显示文本，修改用户密钥，对数据加密，计算MAC，返回随机数。密码键盘输入PIN的操作有两种方式，一种是同步，一种是异步。同步方式会将主线程锁定，直到有结果返回，超时或者被取消。
+ * 其中，"cloudpos.device.pinpad"是标识PIN输入设备的字符串，由具体的实现定义。
+ * <p>使用PIN输入设备对象，可以在PIN输入设备上显示文本，修改用户密钥，对数据加密，计算MAC，返回随机数。PIN输入设备输入PIN的操作有两种方式，一种是同步，一种是异步。同步方式会将主线程锁定，直到有结果返回，超时或者被取消。
  * 异步方式不会锁定主线程，当有结果时，会回调监听者{@link OperationListener#handleResult(OperationResult) handleResult()}方法。
- * <p>为了正常访问密码键盘设备，请在Android Manifest文件中设置密码键盘访问权限，具体如下所示：
+ * <p>为了正常访问PIN输入设备，请在Android Manifest文件中设置PIN输入设备访问权限，具体如下所示：
  * <ol> <li>&lt;uses-permission android:name="android.permission.CLOUDPOS_PIN_GET_PIN_BLOCK"/>
  * 应用程序声明这个权限，可以调用{@link #listenForPinBlock(KeyInfo,  String, boolean,  OperationListener,  int)}及{@link #waitForPinBlock(KeyInfo, String, boolean,  int)}方法。
  * <li>&lt;uses-permission android:name="android.permission.CLOUDPOS_PIN_MAC"/>
@@ -98,7 +100,7 @@ public interface PINPadDevice extends Device {
     
 
     /**
-     * 打开某个逻辑ID的密码键盘设备。
+     * 打开某个逻辑ID的PIN输入设备。
      * <p>
      * 
      * @param logicalID 设备逻辑ID，默认1。
@@ -110,7 +112,7 @@ public interface PINPadDevice extends Device {
     void open(int logicalID) throws DeviceException;
 
     /**
-     * 在密码键盘上显示文本。
+     * 在PIN输入设备上显示文本。
      * 
      * @param lineIndex 行号。
      * @param message 本行显示的信息。
@@ -123,7 +125,7 @@ public interface PINPadDevice extends Device {
     void showText(int lineIndex, String message) throws DeviceException;
     
     /**
-     * 在密码键盘上显示文本。
+     * 在PIN输入设备上显示文本。
      * 
      * @param lineIndex 行号。
      * @param message 本行显示的信息。
@@ -145,7 +147,7 @@ public interface PINPadDevice extends Device {
 
     /**
      * 修改用户密钥，一般用于主密钥/会话密钥算法。
-     * <p>用来更新的用户密钥数据是密文，必须由给定的主密钥加密。
+     * <p>用来更新的用户密钥数据是密文，是由给定的主密钥加密，因此更新时需要指定所使用的主密钥索引。
      * 用户密钥约定使用的是3des算法。
      * @param masterKeyID 用来解密的主密钥索引。
      * @param userKeyType    需要更新的用户密钥类型。
@@ -159,7 +161,7 @@ public interface PINPadDevice extends Device {
     /**
      * 修改用户密钥，一般用于主密钥/会话密钥算法。
      * <p>
-     * 用来更新的用户密钥数据是密文，必须由给定的主密钥加密。
+     * 用来更新的用户密钥数据是密文，是由给定的主密钥加密，因此更新时需要指定所使用的主密钥索引。
      * 用户密钥约定使用的是3des算法。
      * @param masterKeyID 用来解密的主密钥索引。
      * @param userKeyType    需要更新的用户密钥类型。
@@ -180,7 +182,7 @@ public interface PINPadDevice extends Device {
 
     /**
      * 让用户输入PIN，并且按照KeyInfo中选定的密钥进行PIN block的加密。最后返回加密结果。          
-     *<p>本方法是一个异步方法，应用程序等待密码键盘输入命令后，终端通过操作监听者{@link OperationListener#handleResult(OperationResult) handleResult()}方法返回结果。
+     *<p>本方法是一个异步方法，应用程序等待PIN输入设备输入命令后，终端通过操作监听者{@link OperationListener#handleResult(OperationResult) handleResult()}方法返回结果。
      * 每个应用程序必须定义自己的OperationListener，在回调函数handleResult()中对返回结果进行处理。如下所示：
      * <pre>
      * OperationListener operationListener = new OperationListener(){
@@ -228,7 +230,7 @@ public interface PINPadDevice extends Device {
 
     /**
      * 按照KeyInfo中指定的密钥进行计算MAC。
-     * 
+     * <p>常见算法：0 ：X9.19 算法 ,后补 80；1。银联 ECB 算法；2。X9.19算法 (不足后补 0x00)；移动支付项目使用；3。 中总行扩展算法；4。X9.19算法 ,后补 00；5。异或后 3DES 结果；
      * @param macFlag  计算MAC的类型：{@link #MAC_METHOD_X99},
      *            {@link #MAC_METHOD_ECB}。
      * @param plain 数据明文。

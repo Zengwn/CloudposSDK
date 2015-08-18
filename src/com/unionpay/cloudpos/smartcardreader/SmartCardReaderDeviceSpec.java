@@ -13,7 +13,7 @@ package com.unionpay.cloudpos.smartcardreader;
 import com.unionpay.cloudpos.DeviceSpec;
 /**
  * <b>SmartCardReaderDeviceSpec</b>定义了对SmartCard读卡器的详细描述。
- * <p>可以得到终端中关于SmartCard设备定义的信息。
+ * <p>可以得到终端中关于接触式IC卡阅读器设备定义的信息。
  * @date August 07, 2015
  */
 public interface SmartCardReaderDeviceSpec extends DeviceSpec {

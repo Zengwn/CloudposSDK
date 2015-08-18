@@ -179,8 +179,7 @@ public interface PrinterDevice extends Device, TimeConstants
    /**
     *  查询打印机纸张状态
     *  
-    *  @return {@code -101} 缺纸 ,{@code 1}打印机状态正常 ,{@code -102} 打印机异常 .
-    * TODO 有异议，打印中缺纸。缺陷，打印中提示。
+    *  @return {@code -101} 缺纸 ,{@code 1}打印机状态正常 ,{@code -102} 打印机异常 .    
     * */
    int queryStatus() throws DeviceException;
    

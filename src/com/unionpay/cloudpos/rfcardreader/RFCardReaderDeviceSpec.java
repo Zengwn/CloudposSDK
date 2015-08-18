@@ -13,7 +13,7 @@ package com.unionpay.cloudpos.rfcardreader;
 import com.unionpay.cloudpos.DeviceSpec;
 /**
  * <b>RFCardReaderDeviceSpec</b>定义了对非接卡读卡器的详细描述。
- * <p>可以得到终端中关于非接设备定义的信息。
+ * <p>可以得到终端中关于非接触式IC卡阅读器定义的信息。
  * @date August 07, 2015
  */
 public interface RFCardReaderDeviceSpec extends DeviceSpec {

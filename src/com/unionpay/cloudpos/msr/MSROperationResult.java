@@ -13,7 +13,7 @@ package com.unionpay.cloudpos.msr;
 import com.unionpay.cloudpos.OperationResult;
 
 /**
- * <code>MSROperationResult</code>是被磁条卡设备产生，用来返回磁条卡的操作结果。
+ * <code>MSROperationResult</code>是被磁条卡阅读器设备产生，用来返回磁条卡的操作结果。
  * <p>
  * {@link OperationResult#getResultCode() getResultCode()}方法继承至{@link OperationResult}的对应方法。
  * <p>

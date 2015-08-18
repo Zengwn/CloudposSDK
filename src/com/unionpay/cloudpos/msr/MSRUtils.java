@@ -16,7 +16,7 @@ import com.unionpay.cloudpos.TimeConstants;
 /**
  * <b>MSRUtils</b> 
  * <p>
- * 集成了对磁条卡读卡器设备的使用，用户在不关心接口含义的情况下，可以调用waitForSwipe方法，然后继续刷卡操作就可以了。
+ * 集成了对磁条卡阅读器设备的使用，用户在不关心接口含义的情况下，可以调用waitForSwipe方法，然后继续刷卡操作就可以了。
  * <p> 
  * @date August 06, 2015
  */
