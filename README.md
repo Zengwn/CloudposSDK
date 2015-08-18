@@ -16,4 +16,4 @@
 + 支持异步操作
 
 ## 总体框架
-
+ ![image](https://github.com/ZhangUP/CloudposSDK/docs/何总总体框架图.png)
