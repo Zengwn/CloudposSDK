@@ -223,7 +223,7 @@ public interface PINPadDevice extends Device {
      * @param keyInfo 密钥和算法配置信息。
      * @param pan 用户卡号的ASCII字符串。
      * @param voicePrompt 是否语音提示用户。
-     * @param timeout 等待用户刷卡的时间。
+     * @param timeout 等待用户输入PIN的时间。
      * @return PIN block的密文。
      */
     PINPadOperationResult waitForPinBlock(KeyInfo keyInfo, String pan, boolean voicePrompt,  int timeout) throws DeviceException;

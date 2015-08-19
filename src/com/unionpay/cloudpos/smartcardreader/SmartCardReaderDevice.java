@@ -47,7 +47,7 @@ public interface SmartCardReaderDevice extends Device, TimeConstants {
     /**
      * 监听插卡动作。
      * <p>
-     * 本操作是个异步调用。当用户刷卡发生后，结果通过操作监听者{@link OperationListener#handleResult(OperationResult) handleResult()}方法
+     * 本操作是个异步调用。当用户插卡发生后，结果通过操作监听者{@link OperationListener#handleResult(OperationResult) handleResult()}方法
      * 返回。
      * <p>
      * 本方法会正确响应
@@ -62,9 +62,9 @@ public interface SmartCardReaderDevice extends Device, TimeConstants {
      * });
      * </pre>
      * <p>方法通过设置timeout来决定最多等待多长时间。请求开始执行的时候timeout开始计时。
-     * <p>如果timeout时间到了，但用户还没有刷卡，也会回调函数handleResult()。此时
+     * <p>如果timeout时间到了，但用户还没有插卡，也会回调函数handleResult()。此时
      * OperationResult会返回错误：{@link OperationResult#ERR_TIMEOUT ERR_TIMEOUT}，同时没有任何卡片返回
-     * <p>如果timeout是{@link TimeConstants#FOREVER FOREVER}，方法会一直等待刷卡，直到刷卡或取消。
+     * <p>如果timeout是{@link TimeConstants#FOREVER FOREVER}，方法会一直等待插卡，直到插卡或取消。
      * <p>如果timeout是{@link TimeConstants#IMMEDIATE IMMEDIATE}，方法会马上返回。
      * 
      * @param listener 操作监听者。
@@ -97,7 +97,7 @@ public interface SmartCardReaderDevice extends Device, TimeConstants {
     /**
      * 监听卡片移除动作。
      * <p>
-     * 本操作是个异步调用。当用户刷卡发生后，结果通过操作监听者{@link OperationListener#handleResult(OperationResult) handleResult()}方法
+     * 本操作是个异步调用。当用户移除卡发生后，结果通过操作监听者{@link OperationListener#handleResult(OperationResult) handleResult()}方法
      * 返回。
      * <p>
      * 本方法会正确响应
@@ -112,9 +112,9 @@ public interface SmartCardReaderDevice extends Device, TimeConstants {
      * });
      * </pre>
      * <p>方法通过设置timeout来决定最多等待多长时间。请求开始执行的时候timeout开始计时。
-     * <p>如果timeout时间到了，但用户还没有刷卡，也会回调函数handleResult()。此时
+     * <p>如果timeout时间到了，但用户还没有移除卡，也会回调函数handleResult()。此时
      * OperationResult会返回错误：{@link OperationResult#ERR_TIMEOUT ERR_TIMEOUT}，同时没有任何卡片返回
-     * <p>如果timeout是{@link TimeConstants#FOREVER FOREVER}，方法会一直等待刷卡，直到刷卡或取消。
+     * <p>如果timeout是{@link TimeConstants#FOREVER FOREVER}，方法会一直等待，直到移除卡或取消。
      * <p>如果timeout是{@link TimeConstants#IMMEDIATE IMMEDIATE}，方法会马上返回。
      * 
      * @param listener 操作监听者。

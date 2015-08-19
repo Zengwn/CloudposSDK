@@ -64,9 +64,9 @@ public interface IDCardReaderDevice extends Device {
      * });
      * </pre>
      * <p>方法通过设置timeout来决定最多等待多长时间。请求开始执行的时候timeout开始计时。
-     * <p>如果timeout时间到了，但用户还没有刷卡，也会回调函数handleResult()。此时
+     * <p>如果timeout时间到了，但还没有扫描到卡，也会回调函数handleResult()。此时
      * OperationResult会返回错误：{@link OperationResult#ERR_TIMEOUT ERR_TIMEOUT}，同时没有任何卡片返回
-     * <p>如果timeout是{@link TimeConstants#FOREVER FOREVER}，方法会一直等待刷卡，直到刷卡或取消。
+     * <p>如果timeout是{@link TimeConstants#FOREVER FOREVER}，方法会一直等待卡，直到扫描到卡或取消。
      * <p>如果timeout是{@link TimeConstants#IMMEDIATE IMMEDIATE}，方法会马上返回。
      * 
      * @param listener 操作监听者。
