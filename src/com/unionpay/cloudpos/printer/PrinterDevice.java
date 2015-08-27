@@ -101,9 +101,14 @@ public interface PrinterDevice extends Device, TimeConstants
      */
     int BARCODE_HRI_POS_BOTH = 3;
     
-    public static final int PAPER_END = -101;
-    
-    public static final int PAPER_UP = 1;
+    /**
+     * 缺少打印纸张。
+     * */
+    public static final int STATUS_OUT_OF_PAPER = -101;
+    /**
+     * 打印机中已存在纸张。
+     * */
+    public static final int STATUS_PAPER_EXIST = 1;
    /**
     * 打开某个逻辑ID的打印机。
     * <p>打开成功，设备对象就和相应的逻辑ID的打印机建立了连接。此后可以进行后面的各项操作。
@@ -161,7 +166,7 @@ public interface PrinterDevice extends Device, TimeConstants
    
    /**
     * 通用发送ESC指令，并获得可能的返回结果。
-    * 可以用于查询打印机缺纸状态。
+    * <p>打印指令的详细定义由厂商给出。
     * 
     * @param esc ESC指令数据
     * @return 发送结果返回值

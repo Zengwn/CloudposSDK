@@ -31,7 +31,17 @@ public class Format {
 	
 	/**
      * 以键-值对的方式设置打印格式.
-     *
+     * <p>目前定义的主键如下所示：
+     * <ol><li>打印浓度（density），对字符，图形及条码打印都有效。
+     * <li>加粗（bold），对字符打印有效。
+     * <li>反白（reverse），对字符打印有效。
+     * <li>上下倒置（inversion），对字符打印有效。
+     * <li>删除线（line-through），对字符打印有效。
+     * <li>大小（size），对字符打印有效。
+     * <li>对齐方式（align），对字符及图形打印有效。
+     * <li>斜体（italic），对字符打印有效。
+     * <li>HRI字符的打印位置（HRI-location），对条码打印有效。
+     * </ol>
      * @param key   打印格式主键
      * @param value 打印格式值
      */
