@@ -31,16 +31,34 @@ public class Format {
 	
 	/**
      * 以键-值对的方式设置打印格式.
-     * <p>目前定义的主键如下所示：
-     * <ol><li>打印浓度（density），对字符，图形及条码打印都有效。
-     * <li>加粗（bold），对字符打印有效。
-     * <li>反白（reverse），对字符打印有效。
-     * <li>上下倒置（inversion），对字符打印有效。
-     * <li>删除线（line-through），对字符打印有效。
-     * <li>大小（size），对字符打印有效。
-     * <li>对齐方式（align），对字符及图形打印有效。
-     * <li>斜体（italic），对字符打印有效。
-     * <li>HRI字符的打印位置（HRI-location），对条码打印有效。
+     * <p>目前定义的键-值如下所示：
+     * <ol><li>打印浓度（density）
+     * <p>对应的值为：<code>light</code>(淡)，<code>medium</code>(中)，<code>dark</code>(深)。
+     * <p>对字符，图形及条码打印都有效。
+     * <li>加粗（bold）
+     * <p>对应的值为：<code>true</code>(是)，<code>false</code>(否)。其中，<code>true</code>，<code>false</code>，不区分大小写。
+     * <p>对字符打印有效。
+     * <li>反白（reverse）
+     * <p>对应的值为：<code>true</code>(是)，<code>false</code>(否)。其中，<code>true</code>，<code>false</code>，不区分大小写。
+     * <p>对字符打印有效。
+     * <li>上下倒置（inversion）
+     * <p>对应的值为：<code>true</code>(是)，<code>false</code>(否)。其中，<code>true</code>，<code>false</code>，不区分大小写。
+     * <p>对字符打印有效。
+     * <li>删除线（line-through）
+     * <p>对应的值为：<code>1</code>(连续的删除线)，<code>2</code>(断开的删除线)。
+     * <p>对字符打印有效。
+     * <li>大小（size）
+     * <p>对应的值为：<code>extra-small</code>(特小)，<code>small</code>(小)，<code>medium</code>(中)，<code>large</code>(大)，<code>extra-large</code>(特大)。
+     * <p>对字符打印有效。
+     * <li>对齐方式（align）
+     * <p>对应的值为：<code>left</code>(靠左)，<code>right</code>(靠右)，<code>center</code>(居中)。
+     * <p>对字符及图形打印有效。
+     * <li>斜体（italic）
+     * <p>对应的值为：<code>true</code>(是)，<code>false</code>(否)。其中，<code>true</code>，<code>false</code>，不区分大小写。
+     * <p>对字符打印有效。
+     * <li>HRI字符的打印位置（HRI-location）
+     * <p>对应的值为：<code>none</code>(不打印)，<code>up</code>(条码上方)，<code>down</code>(条码下方)，<code>up-down</code>(条码上下方)。
+     * <p>对条码打印有效。
      * </ol>
      * @param key   打印格式主键
      * @param value 打印格式值

@@ -26,7 +26,7 @@ public interface PINPadDeviceSpec extends DeviceSpec {
 	
 	/**
 	 *  是否是内置PIN输入设备
-	 *  <p>
+	 *  <p>如果是内置，那么系统提供密码输入界面。
      * @param logicalID 设备逻辑ID，默认1
      * @return 内置PIN输入设备／外置PIN输入设备
 	 * */
