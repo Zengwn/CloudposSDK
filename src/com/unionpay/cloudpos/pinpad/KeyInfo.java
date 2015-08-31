@@ -19,14 +19,16 @@ import com.unionpay.cloudpos.AlgorithmConstants;
  *            {@link #KEY_TYPE_TDUKPT}, {@link #KEY_TYPE_MK_SK},
  *            {@link #KEY_TYPE_PUBLIC}, {@link #KEY_TYPE_FIX}
  * @param masterKeyID : 主密钥索引[0x00, ..., 0x09]，仅在密钥类型是主密钥/会话密钥{@link #KEY_TYPE_MK_SK}的前提下有效
- * @param userKeyID : 会话密钥类型，仅在密钥类型是主密钥/会话密钥前提下有效。只能使用以下常量：{@link #USER_KEY_ID_PIN},
- *            {@link #USER_KEY_ID_MAC}
+ * @param keyID : 密钥索引。
+ * <p>如果在密钥类型是主密钥/会话密钥{@link #KEY_TYPE_MK_SK}情况下，只能使用以下常量：{@link #USER_KEY_ID_PIN},
+ * {@link #USER_KEY_ID_MAC}，{@link #USER_KEY_ID_DATA}
+ * <p>如果密钥类型是其他四种，表示选定的密钥索引。
  * @param 算法：algorithm 具体定义参考{@link AlgorithmConstants #ALG_DES} or {@link AlgorithmConstants #ALG_3DES}
  * @date August 06, 2015
  */
 public class KeyInfo {
 	public int keyType;
 	public int masterKeyID;
-	public int userKeyID;
+	public int keyID;
 	public int algorithm;
 }
