@@ -56,12 +56,7 @@ public interface PINPadDevice extends Device {
     /**
      * 密钥类型：主密钥/会话密钥
      */
-    int KEY_TYPE_MK_SK = 2;
-
-    /**
-     * 密钥类型：公钥
-     */
-    int KEY_TYPE_PUBLIC = 3;
+    int KEY_TYPE_MK_SK = 2;  
 
     /**
      * 密钥类型：固定密钥
@@ -231,9 +226,18 @@ public interface PINPadDevice extends Device {
 
     /**
      * 按照KeyInfo中指定的密钥进行计算MAC。
-     * <p>常见算法：0 ：X9.19 算法 ,后补 80；1。银联 ECB 算法；2。X9.19算法 (不足后补 0x00)；移动支付项目使用；3。 中总行扩展算法；4。X9.19算法 ,后补 00；5。异或后 3DES 结果；
-     * @param macFlag  计算MAC的类型：{@link #MAC_METHOD_X99},
-     *            {@link #MAC_METHOD_ECB}。
+     * <p>这里KeyInfo中，algorithm一般不需要指定。具体的MAC算法由macFlag参数指定。    
+     * @param keyInfo 指定计算MAC的密钥。
+     * @param macFlag  计算MAC的算法。如下所示：
+     * <ol>
+     * <li>X9.19 算法 ,后补 80：{@link AlgorithmConstants#MAC_METHOD_X99}。
+     * <li>银联 ECB 算法：{@link AlgorithmConstants#MAC_METHOD_X99}。
+     * <li>X9.19算法 (不足后补 0x00)：{@link AlgorithmConstants#MAC_METHOD_X99}移动支付项目使用。
+     * <li> 中总行扩展算法：{@link AlgorithmConstants#MAC_METHOD_X99}。
+     * <li>X9.19算法 ,后补 00：{@link AlgorithmConstants#MAC_METHOD_X99}。
+     * <li>异或后 3DES：{@link AlgorithmConstants#MAC_METHOD_X99}。
+     * <li>X9.9：{@link AlgorithmConstants#MAC_METHOD_X99}。
+     * </ol>
      * @param plain 数据明文。
      * @return MAC。
      */

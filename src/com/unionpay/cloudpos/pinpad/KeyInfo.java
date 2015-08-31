@@ -21,7 +21,7 @@ public class KeyInfo {
 	/**
 	 *  密钥类型：{@link PINPadDevice KEY_TYPE_DUKPT},
 	 *            {@link PINPadDevice KEY_TYPE_TDUKPT}, {@link PINPadDevice KEY_TYPE_MK_SK},
-	 *            {@link PINPadDevice KEY_TYPE_PUBLIC}, {@link PINPadDevice KEY_TYPE_FIX}
+	 *            {@link PINPadDevice KEY_TYPE_FIX}
 	 */
 	public int keyType;
 	

@@ -20,7 +20,7 @@ public interface AlgorithmConstants {
 	int ALG_RSA = 1;
 
 	/**
-	 * MAC算法类型X99
+	 * MAC算法类型X9。9
 	 */
 	int ALG_MAC_METHOD_X99 = 2;
 	/**
@@ -49,5 +49,26 @@ public interface AlgorithmConstants {
 	 * 国密对称加密算法
 	 * */
 	int ALG_SM4 = 8;
+	
+	/**
+	 * X9.19 算法 ,后补 80
+	 */
+	int MAC_METHOD_X919_80 =9;
+	/**
+	 * X9.19算法 (不足后补 0x00)；移动支付项目使用
+	 */
+	int MAC_METHOD_X919_X00 =10;
+	/**
+	 *  中总行扩展算法
+	 */
+	int MAC_METHOD_ZONGHANG =11;
+	/**
+	 * X9.19算法 ,后补 00
+	 */
+	int MAC_METHOD_X919_00 =12;
+	/**
+	 * 异或后 3DES
+	 */
+	int MAC_METHOD_XOR_3DES =13;
 
 }
