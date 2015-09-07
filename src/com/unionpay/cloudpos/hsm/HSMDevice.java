@@ -43,7 +43,7 @@ import com.unionpay.cloudpos.DeviceException;
  * 但是，在读写权限下同时只能有一个设备对象打开设备。
  * <p>
  * 为了正常访问硬件安全模块设备，请在Android Manifest文件中设置硬件安全模块访问权限，具体如下所示：
- * <pre> &lt;uses-permission android:name="android.permission.CLOUDPOS_SAFEMODUAL" /&gt;
+ * <pre> &lt;uses-permission android:name="android.permission.CLOUDPOS_SAFE_MODULE" /&gt;
  * </pre>
  * @see Device
  * @date August 10, 2015
