@@ -15,7 +15,7 @@
 		   
 <a name="项目介绍"></a>
 ## 项目介绍
-	智能云POS SDK（Java接口）为应用程序操作终端设备提供统一的开发工具包。它由每个终端厂商实现，并开放给第三方应用开发商。终端厂商负责终端的硬件设备及驱动，终端的操作系统。每个终端厂商根据提供的SDK接口及自己终端的实际情况实现SDK。第三方应用需要操作终端设备时，只需调用相应的SDK接口就可以了。
+	智能云POS SDK（Java接口）为应用程序操作终端设备提供统一的开发工具包。它由每个终端厂商实现，并开放给第三方应用开发商。终端厂商负责终端的硬件设备及驱动，终端的操作系统。每个终端厂商根据提供的SDK接口及自己终端的实际情况实现SDK。第三方应用需要操作终端设备时，只需调用相应的SDK接口就可以了。
  
 <a name="对于云POS厂商"></a>
 ## 对于云POS厂商
@@ -45,11 +45,11 @@
 
 <a name="对于第三方应用开发商"></a>
 ##对于第三方应用开发商
-	第三方应用开发商开发的应用通过SDK接口访问终端设备。SDK接口部分定义Java层Interface及部分实现。多数都是Interface，少部分如Exception，ATR，MoneyValue-钱箱，Format-打印机格式等是具体实现。
+	第三方应用开发商开发的应用通过SDK接口访问终端设备。SDK接口部分定义Java层Interface及部分实现。多数都是Interface，少部分如Exception，ATR，MoneyValue-钱箱，Format-打印机格式等是具体实现。
 
 <a name="SDK包目录结构"></a>
 ###SDK包目录结构
-	SDK包中除了包含SDK接口部分代码外，还包含文档及示例代码。目录结构如下所示：  
+	SDK包中除了包含SDK接口部分代码外，还包含文档及示例代码。目录结构如下所示：  
 	demo:场景示例代码。  
 	doc:API开发文档，SDK文档。  
 	lib：SDK 接口jar包。
@@ -59,15 +59,15 @@
 
 <a name="下载"></a>
 ####下载
-	从银联指定地址下载最新的SDK。
+	从银联指定地址下载最新的SDK。
 
 <a name="使用"></a>
 ####使用
-	一般情况下，只需将下载好的lib目录下SDK接口jar包添加到开发工具的编译路径下，就可以使用了。
+	一般情况下，只需将下载好的lib目录下SDK接口jar包添加到开发工具的编译路径下，就可以使用了。
 
 <a name="接口调用"></a>
 ####接口调用
-	如果应用中使用到了某个具体的设备，通过POSTerminal来获取对应的设备对象，如下所示：  
+	如果应用中使用到了某个具体的设备，通过POSTerminal来获取对应的设备对象，如下所示：  
 
 `XXDevice XXDevice =(XXDevice)POSTerminal.getInstance().getDevice("设备名称定义");`   
 
@@ -85,7 +85,7 @@
 
 <a name="权限设置"></a>
 ####权限设置
-	终端中的每个设备驱动都需要声明权限后才能使用。因此应用使用驱动时，需要在AndroidManifest.xml中增加相应的权限声明。
+	终端中的每个设备驱动都需要声明权限后才能使用。因此应用使用驱动时，需要在AndroidManifest.xml中增加相应的权限声明。
 
 - 访问安全模块权限  
 `<uses-permission android:name="android.permission.CLOUDPOS_SAFE_MODULE"/>`
@@ -105,6 +105,6 @@
 `<uses-permission android:name="android.permission.CLOUDPOS_PIN_MAC" />`
 - 密码键盘加密数据权限  
 `<uses-permission android:name="android.permission.CLOUDPOS_PIN_ENCRYPT_DATA" />`
-- 密码键盘更新用户密钥权限  
+- 密码键盘更新用户密钥权限   
 `<uses-permission android:name="android.permission.CLOUDPOS_PIN_UPDATE_USER_KEY" />`
 
