@@ -83,24 +83,24 @@ XXDevice XXDevice =(XXDevice)POSTerminal.getInstance().getDevice("设备名称�
 ####权限设置
 终端中的每个设备驱动都需要声明权限后才能使用。因此应用使用驱动时，需要在AndroidManifest.xml中增加相应的权限声明。
 
-> 访问安全模块权限
-> `<uses-permission android:name="android.permission.CLOUDPOS_SAFE_MODULE"/>`
-> 访问磁条卡读卡器设备权限
-> `<uses-permission android:name="android.permission.CLOUDPOS_MSR" />`
-> 访问接触式IC卡读卡设备权限
-> `<uses-permission android:name="android.permission.CLOUDPOS_SMARTCARD" />`
-> 访问非接触IC卡读卡设备权限
-> `<uses-permission android:name="android.permission.CLOUDPOS_CONTACTLESS_CARD" />`
-> 访问打印机设备权限
-> `<uses-permission android:name="android.permission.CLOUDPOS_PRINTER" />`
-> 密码键盘访问权限
-> `<uses-permission android:name="android.permission.CLOUDPOS_PINPAD" />`
-> 密码键盘计算Pinblock权限
-> `<uses-permission android:name="android.permission.CLOUDPOS_PIN_GET_PIN_BLOCK" />`
-> 密码键盘计算Mac权限
-> `<uses-permission android:name="android.permission.CLOUDPOS_PIN_MAC" />`
-> 密码键盘加密数据权限
-> `<uses-permission android:name="android.permission.CLOUDPOS_PIN_ENCRYPT_DATA" />`
-> 密码键盘更新用户密钥权限
-> `<uses-permission android:name="android.permission.CLOUDPOS_PIN_UPDATE_USER_KEY" />`
+- 访问安全模块权限
+`<uses-permission android:name="android.permission.CLOUDPOS_SAFE_MODULE"/>`
+-  访问磁条卡读卡器设备权限
+`<uses-permission android:name="android.permission.CLOUDPOS_MSR" />`
+- 访问接触式IC卡读卡设备权限
+`<uses-permission android:name="android.permission.CLOUDPOS_SMARTCARD" />`
+- 访问非接触IC卡读卡设备权限
+`<uses-permission android:name="android.permission.CLOUDPOS_CONTACTLESS_CARD" />`
+- 访问打印机设备权限
+`<uses-permission android:name="android.permission.CLOUDPOS_PRINTER" />`
+- 密码键盘访问权限
+`<uses-permission android:name="android.permission.CLOUDPOS_PINPAD" />`
+- 密码键盘计算Pinblock权限
+`<uses-permission android:name="android.permission.CLOUDPOS_PIN_GET_PIN_BLOCK" />`
+- 密码键盘计算Mac权限
+`<uses-permission android:name="android.permission.CLOUDPOS_PIN_MAC" />`
+- 密码键盘加密数据权限
+`<uses-permission android:name="android.permission.CLOUDPOS_PIN_ENCRYPT_DATA" />`
+- 密码键盘更新用户密钥权限
+`<uses-permission android:name="android.permission.CLOUDPOS_PIN_UPDATE_USER_KEY" />`
 
