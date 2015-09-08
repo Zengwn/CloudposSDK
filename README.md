@@ -67,8 +67,8 @@ SDK包中除了包含SDK接口部分代码外，还包含文档及示例代码�
 
 <a name="接口调用"></a>
 ####接口调用
-如果应用中使用到了某个具体的设备，通过POSTerminal来获取对应的设备对象，如下所示：
-XXDevice XXDevice =(XXDevice)POSTerminal.getInstance().getDevice("设备名称定义");
+如果应用中使用到了某个具体的设备，通过POSTerminal来获取对应的设备对象，如下所示：  
+`XXDevice XXDevice =(XXDevice)POSTerminal.getInstance().getDevice("设备名称定义");`   
 获取设备对象后，可以调用相应接口进行操作，比如打开设备，关闭设备等。
 如果应用中使用了异步操作，那么必须定义自己的OperationListener，在回调函数handleResult()中对返回结果进行处理。如下所示：
 		 
