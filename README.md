@@ -45,7 +45,7 @@
 
 <a name="对于第三方应用开发商"></a>
 ##对于第三方应用开发商
-第三方应用开发商开发的应用通过SDK接口访问终端设备。	SDK接口部分定义Java层Interface及部分实现。多数都是Interface，少部分如Exception，ATR，MoneyValue-钱箱，Format-打印机格式等是具体实现。
+第三方应用开发商开发的应用通过SDK接口访问终端设备。SDK接口部分定义Java层Interface及部分实现。多数都是Interface，少部分如Exception，ATR，MoneyValue-钱箱，Format-打印机格式等是具体实现。
 
 <a name="SDK包目录结构"></a>
 ###SDK包目录结构
@@ -71,8 +71,7 @@ SDK包中除了包含SDK接口部分代码外，还包含文档及示例代码�
 XXDevice XXDevice =(XXDevice)POSTerminal.getInstance().getDevice("设备名称定义");
 获取设备对象后，可以调用相应接口进行操作，比如打开设备，关闭设备等。
 如果应用中使用了异步操作，那么必须定义自己的OperationListener，在回调函数handleResult()中对返回结果进行处理。如下所示：
-		
- 
+		 
      OperationListener operationListener = new OperationListener(){
      public void handleResult(OperationResult result) {
       // handleResult
@@ -84,14 +83,24 @@ XXDevice XXDevice =(XXDevice)POSTerminal.getInstance().getDevice("设备名称�
 ####权限设置
 终端中的每个设备驱动都需要声明权限后才能使用。因此应用使用驱动时，需要在AndroidManifest.xml中增加相应的权限声明。
 
-> 访问安全模块权限 `<uses-permission android:name="android.permission.CLOUDPOS_SAFE_MODULE"/>`
-> 访问磁条卡读卡器设备权限`<uses-permission android:name="android.permission.CLOUDPOS_MSR" />`
-> 访问接触式IC卡读卡设备权限`<uses-permission android:name="android.permission.CLOUDPOS_SMARTCARD" />`
-> 访问非接触IC卡读卡设备权限`<uses-permission android:name="android.permission.CLOUDPOS_CONTACTLESS_CARD" />`
-> 访问打印机设备权限`<uses-permission android:name="android.permission.CLOUDPOS_PRINTER" />`
-> 密码键盘访问权限`<uses-permission android:name="android.permission.CLOUDPOS_PINPAD" />`
-> 密码键盘计算Pinblock权限`<uses-permission android:name="android.permission.CLOUDPOS_PIN_GET_PIN_BLOCK" />`
-> 密码键盘计算Mac权限`<uses-permission android:name="android.permission.CLOUDPOS_PIN_MAC" />`
-> 密码键盘加密数据权限`<uses-permission android:name="android.permission.CLOUDPOS_PIN_ENCRYPT_DATA" />`
-> 密码键盘更新用户密钥权限`<uses-permission android:name="android.permission.CLOUDPOS_PIN_UPDATE_USER_KEY" />`
+> 访问安全模块权限
+> `<uses-permission android:name="android.permission.CLOUDPOS_SAFE_MODULE"/>`
+> 访问磁条卡读卡器设备权限
+> `<uses-permission android:name="android.permission.CLOUDPOS_MSR" />`
+> 访问接触式IC卡读卡设备权限
+> `<uses-permission android:name="android.permission.CLOUDPOS_SMARTCARD" />`
+> 访问非接触IC卡读卡设备权限
+> `<uses-permission android:name="android.permission.CLOUDPOS_CONTACTLESS_CARD" />`
+> 访问打印机设备权限
+> `<uses-permission android:name="android.permission.CLOUDPOS_PRINTER" />`
+> 密码键盘访问权限
+> `<uses-permission android:name="android.permission.CLOUDPOS_PINPAD" />`
+> 密码键盘计算Pinblock权限
+> `<uses-permission android:name="android.permission.CLOUDPOS_PIN_GET_PIN_BLOCK" />`
+> 密码键盘计算Mac权限
+> `<uses-permission android:name="android.permission.CLOUDPOS_PIN_MAC" />`
+> 密码键盘加密数据权限
+> `<uses-permission android:name="android.permission.CLOUDPOS_PIN_ENCRYPT_DATA" />`
+> 密码键盘更新用户密钥权限
+> `<uses-permission android:name="android.permission.CLOUDPOS_PIN_UPDATE_USER_KEY" />`
 
