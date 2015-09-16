@@ -85,6 +85,7 @@
 - LED设备：cloudpos.device.led  
 - 钱箱设备：cloudpos.device.cashdrawer  
 - 客显设备：cloudpos.device.secondarydisplay  
+
 如果应用中使用了异步操作，那么必须定义自己的OperationListener，在回调函数handleResult()中对返回结果进行处理。如下所示：
 		 
      OperationListener operationListener = new OperationListener(){
