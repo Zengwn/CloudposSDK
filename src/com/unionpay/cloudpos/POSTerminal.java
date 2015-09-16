@@ -19,25 +19,28 @@ package com.unionpay.cloudpos;
  * @date August 06, 2015
  */
 public abstract class POSTerminal {
-//    public static final String DEVICE_NAME_MSR = "cloudpos.device.msr";
+	
+//	  public static final String DEVICE_NAME_MSR = "cloudpos.device.msr";
 //
 //    public static final String DEVICE_NAME_HSM = "cloudpos.device.hsm";
-//	
-//    public static final String DEVICE_NAME_CONTACTLESS_CARD = "cloudpos.device.contactlesscard";
 //
-//    public static final String DEVICE_NAME_IDCARD = "cloudpos.device.idcard";
+//    public static final String DEVICE_NAME_RF_CARD_READER = "cloudpos.device.rfcardreader";
+//
+//    public static final String DEVICE_NAME_IDCARD_READER = "cloudpos.device.idcardreader";
 //
 //    public static final String DEVICE_NAME_PRINTER = "cloudpos.device.printer";
 //
 //    public static final String DEVICE_NAME_PINPAD = "cloudpos.device.pinpad";
 //
-//    public static final String DEVICE_NAME_SMARTCARD = "cloudpos.device.smartcard";
+//    public static final String DEVICE_NAME_SMARTCARD_READER = "cloudpos.device.smartcardreader";
 //
 //    public static final String DEVICE_NAME_SERIALPORT = "cloudpos.device.serialport";
 //
-//    public static final String DEVICE_NAME_LED = "cloudpos.device.led";
+//	  public static final String DEVICE_NAME_LED = "cloudpos.device.led";
 //
-//    public static final String DEVICE_NAME_BEEPER = "cloudpos.device.beeper";
+//    public static final String DEVICE_NAME_CASH_DRAWER = "cloudpos.device.cashdrawer";
+//
+//    public static final String DEVICE_NAME_SECONDARY_DISPLAY = "cloudpos.device.secondarydisplay";
 
 	/**
 	 *  系统属性

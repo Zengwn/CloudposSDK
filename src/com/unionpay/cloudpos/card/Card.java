@@ -61,7 +61,7 @@ public interface Card {
      * @return 卡片ID的字节流
      *
      */
-    byte[] getID();
+    byte[] getID() throws DeviceException;
     
     /**
      * 连接卡片，并返回卡片的ATR信息。
@@ -102,6 +102,6 @@ public interface Card {
      * @return 结果
      * 
      */
-    public int getCardStatus();
+    public int getCardStatus() throws DeviceException;
     
 }

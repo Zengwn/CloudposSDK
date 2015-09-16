@@ -28,7 +28,7 @@ import com.unionpay.cloudpos.TimeConstants;
  * <ol>
  * <li>通过前面的介绍，得到串口设备对象。
  * <li>调用{@link #open(int)},打开成功后，和对应的串口设备建立了连接。
- * <li>调用{@link #write(byte[], int, int)()},可以将数据buffer流通过该打开的串口设备写到连接到该串口的某个设备中 。
+ * <li>调用{@link #write(byte[], int, int)},可以将数据buffer流通过该打开的串口设备写到连接到该串口的某个设备中 。
  * <li>有两种方法可以读取串口中传过来数据，一为同步方法：{@link #waitForRead(int, int)},一为异步方法{@link #listenForRead(int, OperationListener, int)},程序可以根据自身的业务逻辑自己选择哪种方式。
  * 	值得注意的是，如果选择异步方法，可以通过调用{@link #cancelRequest()}来取消。同步方法不能取消。这两种方法都定义了超时，因此即使不取消，在超时到来时，不管有没有数据过来，都会返回结果。 
  * <li>调用{@link #close()},关闭某个串口设备 。 
@@ -150,7 +150,7 @@ public interface SerialPortDevice extends Device {
      * 设置RTS
      * <p>
      * 
-     * @param <code>true</code>设置RTS, <code>false</code>清楚RTS
+     * @param <code>true</code>设置RTS, <code>false</code>清除RTS
      * @throws DeviceException  具体定义参考{@link DeviceException DeviceException}的文档。
      */
     void changeRTS(boolean rts) throws DeviceException;
@@ -242,7 +242,7 @@ public interface SerialPortDevice extends Device {
      * 
      * @param data 数据
      * @param offset 数据中的起始偏移量。
-     * @param len the 要写入的字节数。
+     * @param len 要写入的字节数。
      * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档。
      * @throws IllegalArgumentException 如果发生参数错误
      */

@@ -21,7 +21,7 @@ import com.unionpay.cloudpos.TimeConstants;
  * <p>设备对象通过<code>POSTerminal</code>的对应方法获得，如下所示：
  * <pre>
  * IDCardReaderDevice idCardReaderDevice =
- *         (IDCardReaderDevice) POSTerminal.getInstance().getDevice("cloudpos.device.idcard");
+ *         (IDCardReaderDevice) POSTerminal.getInstance().getDevice("cloudpos.device.idcardreader");
  * </pre>
  * 其中，"cloudpos.device.idcard"是标识非接读卡器的字符串，由具体的实现定义。
  * <p>身份读取设备对象主要进行身份证卡读取操作。其中等卡及移卡都包括同步和异步两种方式。同步方式会将主线程锁定，直到有结果返回，超时或者被取消。

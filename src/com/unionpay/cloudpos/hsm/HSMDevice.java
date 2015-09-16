@@ -113,12 +113,12 @@ public interface HSMDevice extends Device{
      * <br>
      * 该操作需要读写权限。
      * 
-     * @param alias         需要生成的私钥（密钥对）的别名
+     * @param aliasPrivateKey         需要生成的私钥（密钥对）的别名。
      * @param algorithm     密钥对支持的算法。
      * @param keySize       密钥长度，目前只支持2048位。
      * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档。
      */
-    void generateKeyPair(String alias, String algorithm, int keySize) throws DeviceException;
+    void generateKeyPair(String aliasPrivateKey, String algorithm, int keySize) throws DeviceException;
     
     /**
      * 注入终端公钥证书。
@@ -213,9 +213,9 @@ public interface HSMDevice extends Device{
      * 该操作需要读写权限。
      * 
      * @param aliasPrivateKey   私钥别名。
-     * @param commonName          CSR中的主体名称。
+     * @param subject          CSR中的主体名称等。
      * 
-     * @return  PEM格式的CSR数据流		 
+     * @return  PEM格式的CSR数据流。		 
      * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档。
      */
     byte[] generateCSR(String aliasPrivateKey, X500Principal subject) throws DeviceException;
@@ -252,5 +252,5 @@ public interface HSMDevice extends Device{
      * 该操作需要只读权限。
      * @return     空间大小单位为byte。
      */
-    long getFreeSpace();
+    long getFreeSpace() throws DeviceException;
 }

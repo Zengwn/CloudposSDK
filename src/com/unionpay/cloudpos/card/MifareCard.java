@@ -86,20 +86,20 @@ public interface MifareCard extends MemoryCard {
     MoneyValue readValue(int sectorIndex, int blockOfSector) throws DeviceException;
     
     /**
-     * 电子钱包的数据值加一。
+     * 设置电子钱包的数据值，做加法。
      *  @param sectorIndex 分区号.
      *  @param blockOfSector block索引号.
-     *  @param value 钱包数据.
+     *  @param value 钱包数据，加值.
      *  @return  {@code true} 成功，{@code false} 失败.
      *  @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档。   
      * */
     boolean increaseValue(int sectorIndex, int blockOfSector, int value) throws DeviceException;
     
     /**
-     * 电子钱包的数据值减一。
+     * 设置电子钱包的数据值，做减法。
      *  @param sectorIndex 分区号.
      *  @param blockOfSector block索引号.
-     *  @param value 钱包数据及用户数据.
+     *  @param value 钱包数据，减去值.
      *  @return  {@code true} 成功，{@code false} 失败.
      *  @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档。   
      * */

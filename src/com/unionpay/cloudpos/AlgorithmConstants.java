@@ -53,22 +53,22 @@ public interface AlgorithmConstants {
 	/**
 	 * X9.19 算法 ,后补 80
 	 */
-	int MAC_METHOD_X919_80 =9;
+	int ALG_MAC_METHOD_X919_80 =9;
 	/**
 	 * X9.19算法 (不足后补 0x00)；移动支付项目使用
 	 */
-	int MAC_METHOD_X919_X00 =10;
+	int ALG_MAC_METHOD_X919_X00 =10;
 	/**
 	 *  中总行扩展算法
 	 */
-	int MAC_METHOD_ZONGHANG =11;
+	int ALG_MAC_METHOD_BOCE =11;
 	/**
 	 * X9.19算法 ,后补 00
 	 */
-	int MAC_METHOD_X919_00 =12;
+	int ALG_MAC_METHOD_X919_00 =12;
 	/**
 	 * 异或后 3DES
 	 */
-	int MAC_METHOD_XOR_3DES =13;
+	int ALG_MAC_METHOD_XOR_3DES =13;
 
 }

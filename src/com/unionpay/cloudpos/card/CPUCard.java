@@ -30,7 +30,6 @@ public interface CPUCard extends Card {
      * @param apdu APDU数据流
      * @return 返回的APDU数据
      * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档：
-     * @throws IllegalArgumentException <ul>
      *             <li>如果<code>buffer</code>为空
      *             </ul>
      */

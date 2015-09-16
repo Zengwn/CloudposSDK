@@ -21,7 +21,7 @@ import com.unionpay.cloudpos.TimeConstants;
  * <p>设备对象通过<code>POSTerminal</code>的对应方法获得，如下所示：
  * <pre>
  * RFCardReaderDevice rFCardReaderDevice =
- *         (RFCardReaderDevice) POSTerminal.getInstance().getDevice("cloudpos.device.contactlesscard");
+ *         (RFCardReaderDevice) POSTerminal.getInstance().getDevice("cloudpos.device.rfcardreader");
  * </pre>
  * 其中，"cloudpos.device.contactlesscard"是标识非接读卡器的字符串，由具体的实现定义。
  * <p>非接触式IC卡阅读器对象主要进行非接卡读卡操作。其中等卡及移卡都包括同步和异步两种方式。同步方式会将主线程锁定，直到有结果返回，超时或者被取消。
@@ -146,7 +146,7 @@ public interface RFCardReaderDevice extends Device, TimeConstants {
     /**
      * 返回通讯速率参数：
      */
-    void getSpeed()throws DeviceException;
+    int getSpeed()throws DeviceException;
 
     /**
      * 按照非接卡的通讯参数设定和模式设定，启动一次扫描非接卡的过程。
@@ -203,9 +203,8 @@ public interface RFCardReaderDevice extends Device, TimeConstants {
      * @param timeout 最大扫描时间，通过时间常量设定。
      * @return 操作结果
      * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档。
-     * @throws IllegalArgumentException 非法的<code>timeout</code>
      */
-    RFCardReaderOperationResult waitForCardPresent(int timeouat) throws DeviceException,IllegalArgumentException;
+    RFCardReaderOperationResult waitForCardPresent(int timeouat) throws DeviceException;
     /**
      * 监听卡片移除动作。
      * <p>
@@ -253,6 +252,6 @@ public interface RFCardReaderDevice extends Device, TimeConstants {
      * @return 操作结果
      * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档。
    */
-    RFCardReaderOperationResult waitForCardAbsent(int timeouat) throws DeviceException,IllegalArgumentException;
+    RFCardReaderOperationResult waitForCardAbsent(int timeouat) throws DeviceException;
 
 }

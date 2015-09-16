@@ -20,7 +20,7 @@ import com.unionpay.cloudpos.DeviceException;
  * <p>设备对象通过<code>POSTerminal</code>的对应方法获得，如下所示：
  * <pre>
  * SecondaryDisplayDevice secondaryDisplayDevice =
- *         (SecondaryDisplayDevice) POSTerminal.getInstance().getDevice("cloudpos.device.secondaryDisplay");
+ *         (SecondaryDisplayDevice) POSTerminal.getInstance().getDevice("cloudpos.device.secondarydisplay");
  * </pre>
  * 其中，"cloudpos.device.secondaryDisplay"是标识客显设备的字符串，由具体的实现定义。
  * <p>使用客显设备对象，可以将内容以图片的形式显示在客显屏幕上。也可以让客显屏发出声音。

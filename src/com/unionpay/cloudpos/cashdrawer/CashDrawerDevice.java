@@ -46,7 +46,6 @@ public interface CashDrawerDevice extends Device {
      * 弹出钱箱。
      * 
      * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档。
-     * @throws IllegalArgumentException
      *         <ul>
      *         <li>非法<code>logicalID</code></li>
      *         </ul>

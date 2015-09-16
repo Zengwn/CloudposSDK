@@ -32,7 +32,7 @@ public interface PrinterDeviceSpec extends DeviceSpec {
 	boolean canSetDensity(int logicalID);
 	
 	/**
-	 * 返回标准字体的点数宽度
+	 * 返回标准字体的点数高度
 	 * @param logicalID  打印机逻辑ID，默认为0
 	 * @return 打印机的标准字体的高度
 	 * */

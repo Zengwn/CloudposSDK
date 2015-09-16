@@ -73,6 +73,18 @@
 
 获取设备对象后，可以调用相应接口进行操作，比如打开设备，关闭设备等。
 
+设备名称定义如下所示：
+- 磁条卡阅读器：cloudpos.device.msr  
+- 安全模块：cloudpos.device.hsm  
+- 非接触式IC卡阅读器：cloudpos.device.rfcardreader  
+- 身份证读取设备：cloudpos.device.idcardreader  
+- 打印机：cloudpos.device.printer  
+- PIN输入设备：cloudpos.device.pinpad  
+- 接触式IC卡阅读器：cloudpos.device.smartcardreader  
+- 串口设备：cloudpos.device.serialport  
+- LED设备：cloudpos.device.led  
+- 钱箱设备：cloudpos.device.cashdrawer  
+- 客显设备：cloudpos.device.secondarydisplay  
 如果应用中使用了异步操作，那么必须定义自己的OperationListener，在回调函数handleResult()中对返回结果进行处理。如下所示：
 		 
      OperationListener operationListener = new OperationListener(){

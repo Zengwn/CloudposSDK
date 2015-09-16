@@ -230,13 +230,13 @@ public interface PINPadDevice extends Device {
      * @param keyInfo 指定计算MAC的密钥。
      * @param macFlag  计算MAC的算法。如下所示：
      * <ol>
-     * <li>X9.19 算法 ,后补 80：{@link AlgorithmConstants#MAC_METHOD_X99}。
-     * <li>银联 ECB 算法：{@link AlgorithmConstants#MAC_METHOD_X99}。
-     * <li>X9.19算法 (不足后补 0x00)：{@link AlgorithmConstants#MAC_METHOD_X99}移动支付项目使用。
-     * <li> 中总行扩展算法：{@link AlgorithmConstants#MAC_METHOD_X99}。
-     * <li>X9.19算法 ,后补 00：{@link AlgorithmConstants#MAC_METHOD_X99}。
-     * <li>异或后 3DES：{@link AlgorithmConstants#MAC_METHOD_X99}。
-     * <li>X9.9：{@link AlgorithmConstants#MAC_METHOD_X99}。
+     * <li>X9.19 算法 ,后补 80：{@link AlgorithmConstants#ALG_MAC_METHOD_X919_80}。
+     * <li>银联 ECB 算法：{@link AlgorithmConstants#ALG_MAC_METHOD_ECB}。
+     * <li>X9.19算法 (不足后补 0x00)：{@link AlgorithmConstants#ALG_MAC_METHOD_X919_X00}移动支付项目使用。
+     * <li> 中总行扩展算法：{@link AlgorithmConstants#ALG_MAC_METHOD_BOCE}。
+     * <li>X9.19算法 ,后补 00：{@link AlgorithmConstants#ALG_MAC_METHOD_X919_00}。
+     * <li>异或后 3DES：{@link AlgorithmConstants#ALG_MAC_METHOD_XOR_3DES}。
+     * <li>X9.9：{@link AlgorithmConstants#ALG_MAC_METHOD_X99}。
      * </ol>
      * @param plain 数据明文。
      * @return MAC。
