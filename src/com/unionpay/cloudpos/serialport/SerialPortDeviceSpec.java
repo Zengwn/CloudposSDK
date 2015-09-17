@@ -19,8 +19,8 @@ import com.unionpay.cloudpos.DeviceSpec;
 public interface SerialPortDeviceSpec extends DeviceSpec {
 	
 	/**
-	 *  返回串口数量
-	 *  @return 终端中串口数量
+	 *  返回串口数量。
+	 *  @return 终端中串口数量，不支持返回0
 	 * */
 	int getCounts();
 

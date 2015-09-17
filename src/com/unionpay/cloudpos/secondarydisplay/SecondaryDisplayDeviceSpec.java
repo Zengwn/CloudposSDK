@@ -20,13 +20,13 @@ public interface SecondaryDisplayDeviceSpec extends DeviceSpec {
 	
 	/**
 	 *  返回客显屏幕的宽度。	 
-     * @return 宽度
+     * @return 宽度，不支持返回0.
 	 * */
 	int getWidth();
 	
 	/**
 	 *  返回客显屏幕的高度。	 
-     * @return 高度
+     * @return 高度，不支持返回0.
 	 * */
 	int getHeight();
 	

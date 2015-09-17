@@ -27,33 +27,33 @@ public interface LEDDeviceSpec extends DeviceSpec {
 	/**
 	 *  返回可以操作的LED灯数量。
 	 *  <p>
-	 * @return 返回LED灯的数量。
+	 * @return 返回LED灯的数量。不支持返回0.
 	 * */
 	int getCounts();
 	
 	/**
-	*  返回LED设备的颜色
+	*  返回LED设备的颜色。
      * <p>
      * @param logicalID  设备逻辑ID
-	 * @return int 颜色
+	 * @return int 颜色，参数错误及不支持返回null.
 	 * */
 	byte[] getColors(int logicalID); 
 	
 	/**
-	 *  是否支持快速闪烁
+	 *  是否支持快速闪烁。
 	 *  <p>
 	 *  500ms闪烁一次
 	 *  @param logicalID  设备逻辑ID
-	 *  @return 支持/不支持
+	 *  @return {@code true} 支持， {@code false} 不支持，参数错误也返回false.
 	 * */
 	boolean canQuickBlink(int logicalID);
 
 	/**
-	 *  是否支持慢速闪烁
+	 *  是否支持慢速闪烁。
 	 *  <p>
 	 *  1s闪烁一次
 	 *  @param logicalID  设备逻辑ID
-	 *  @return 支持/不支持
+	 *  @return {@code true} 支持， {@code false} 不支持，参数错误也返回false.
 	 * */
 	boolean canSlowBlink(int logicalID);
 }

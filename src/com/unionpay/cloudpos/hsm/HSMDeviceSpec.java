@@ -21,7 +21,7 @@ public interface HSMDeviceSpec extends DeviceSpec {
 	
 	/**
 	 *  返回安全模块中的支持的所有加密算法。
-	 *  @return 
+	 *  @return 返回支持的所有加密算法，不支持返回null。
 	 * */
 	int [] getAlgorithms();
 }

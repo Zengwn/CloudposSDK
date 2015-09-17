@@ -20,13 +20,14 @@ public interface RFCardReaderDeviceSpec extends DeviceSpec {
 	
 	/**
 	 *  是否支持等待卡片移除.	
-	 *  @return {@code true} 支持，{@code false} 不支持。
+	 *  @return {@code true} 支持，{@code false} 不支持.
 	 * */
 	boolean isRemovable();
 	
 	/**
-	 *  返回非接卡模式
+	 *  返回非接卡模式。
 	 *  模式定义见{@link RFCardReaderDevice RFCardReaderDevice}常量部分定义。
+	 *  @return 返回模式，不支持返回null。
 	 * */
 	int [] getSupportedModes();
 	

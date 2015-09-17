@@ -46,7 +46,7 @@ public interface Device {
      * <p>
      * 一旦close了，只有重新open才能让这个设备对象和设备建立连接。
      * <p>
-     * 
+     * 如果已经打开设备的应用进程消失，则自动关闭对设备的占用。
      * @throws DeviceException 包括以下code:
      *             <ul>
      *             <li>BAD_CONTROL_MODE - 如果该设备没有被open 
@@ -56,7 +56,7 @@ public interface Device {
     void close() throws DeviceException;
 
     /**
-     * 该方法用于尝试取消一个正在执行的异步操作。
+     * 该方法用于尝试取消一个正在执行的异步操作或带有timeout的同步操作。
      * <p>
      * 设备对象的每种方法对cancelRequest的响应不同，具体包括以下3种：
      * <ol>
@@ -69,11 +69,11 @@ public interface Device {
      * 总体上来说，异步方法必须响应cancelRequest方法，返回的异步操作结果状态是{@link OperationResult#CANCEL CANCEL}。
      * 如果没有异步方法正在被执行，cancelRequest就会抛出异常。
      * <p>
-     * 如果已经打开设备的应用进程消失，则自动关闭对设备的占用。
+     * 
      * @throws DeviceException 包括以下code:
      *             <ul>
      *             <li>BAD_CONTROL_MODE - 如果该设备没有被open 
-     *             <li>NO_REQUEST_PENDING - 如果没有异步方法增在执行
+     *             <li>NO_REQUEST_PENDING - 如果没有异步方法或带有timeout的同步请求正在执行
      *             </ul>
      */
     void cancelRequest() throws DeviceException;

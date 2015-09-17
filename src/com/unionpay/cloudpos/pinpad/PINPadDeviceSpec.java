@@ -19,32 +19,33 @@ import com.unionpay.cloudpos.DeviceSpec;
 public interface PINPadDeviceSpec extends DeviceSpec {
 	
 	/**
-	 *  可支持的最大PIN输入设备数量
+	 *  可支持的最大PIN输入设备数量。
 	 *  <p>
+	 *  @return 返回支持的数量，不支持返回0
 	 * */
 	int getCounts();
 	
 	/**
-	 *  是否是内置PIN输入设备
+	 *  是否是内置PIN输入设备。
 	 *  <p>如果是内置，那么系统提供密码输入界面。
      * @param logicalID 设备逻辑ID，默认1
-     * @return 内置PIN输入设备／外置PIN输入设备
+     * @return {@code true} 内置PIN输入设备， {@code false} 外置PIN输入设备，参数错误及不支持也返回false.
 	 * */
 	boolean isInternal(int logicalID);
 	
 	/**
-	 *  是否支持获取随机数
+	 *  是否支持获取随机数。
 	 *  <p>
      *  @param logicalID 设备逻辑ID，默认1
-	 *  @return 支持取随机数/不支持取随机数
+	 *  @return {@code true} 支持取随机数， {@code false} 不支持取随机数，参数错误也返回false.
 	 * */    
 	boolean canGetRandom(int logicalID);
 	
 	/**
-	 *  是否支持显示文本
+	 *  是否支持显示文本。
 	 *  <p>
      *  @param logicalID 设备逻辑ID，默认1
-	 *  @return 支持/不支持
+	 *  @return {@code true} 支持， {@code false} 不支持，参数错误也返回false.
 	 * */
 	boolean canShowText(int logicalID);
 }
