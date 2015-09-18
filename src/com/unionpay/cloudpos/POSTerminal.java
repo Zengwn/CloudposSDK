@@ -10,6 +10,11 @@
 
 package com.unionpay.cloudpos;
 
+import java.io.File;
+
+import dalvik.system.DexClassLoader;
+import android.content.Context;
+
 
 /**
  * 设备管理器<b>POSTerminal</b> 是获得每个设备的入口。
@@ -47,31 +52,55 @@ public abstract class POSTerminal {
 	 * */
 	public static final String POS_TERMINAL_CLASS = "cloudpos.terminal.class";
     private static POSTerminal self = null;
+    
+    /**
+     *  SDK实现jar包的路径。
+     * */
+    private static final String LOAD_JAR_PATH = "/data/cloudpossdk/cloudpossdkimpl.jar";
 
     /**
      * 返回设备管理器的实现。
      * 
      * @return 设备管理器
      */
-    public static synchronized POSTerminal getInstance() {
+    public static synchronized POSTerminal getInstance(Context context) {
         if (self == null) {
             self = null;
-            String className = System.getProperty(POS_TERMINAL_CLASS);
             Object terminalObj = null;
+            String className = System.getProperty(POS_TERMINAL_CLASS);
             try {
-				Class<?> clazz = Class.forName(className);
-				// return the real implementation :cloudpos.terminal.class.
-				terminalObj = clazz.newInstance();
-				if(terminalObj instanceof POSTerminal){
-					self = (POSTerminal)terminalObj;
-				}
-			} catch (ClassNotFoundException e) {
-				e.printStackTrace();
-			}catch (InstantiationException e) {
-				e.printStackTrace();
-			} catch (IllegalAccessException e) {
-				e.printStackTrace();
-			}
+            	//从系统指定路径中加载sdk实现。
+            	File dexOutputDir = context.getDir("dex", Context.MODE_PRIVATE);
+            	DexClassLoader dexClassLoader = new DexClassLoader(LOAD_JAR_PATH, dexOutputDir.getAbsolutePath(), null,  POSTerminal.class.getClassLoader());// success
+            	Class<?>  clazz = dexClassLoader.loadClass(className);
+    			// return the real implementation
+    			terminalObj = clazz.newInstance();
+    			if(terminalObj instanceof POSTerminal){
+    				self = (POSTerminal)terminalObj;
+    			}
+    		} catch (Exception e) {
+    			//无法从指定目录获得sdk对象。
+    			e.printStackTrace();
+    		}
+            
+            if(self == null){
+//            	从系统中加载默认的sdk实现地址。
+            	 
+                 try {
+     				Class<?> clazz = Class.forName(className);
+     				// return the real implementation :cloudpos.terminal.class.
+     				terminalObj = clazz.newInstance();
+     				if(terminalObj instanceof POSTerminal){
+     					self = (POSTerminal)terminalObj;
+     				}
+     			} catch (ClassNotFoundException e) {
+     				e.printStackTrace();
+     			}catch (InstantiationException e) {
+     				e.printStackTrace();
+     			} catch (IllegalAccessException e) {
+     				e.printStackTrace();
+     			}
+            }
         }
         return self;
     }

@@ -42,4 +42,11 @@ public class KeyInfo {
 	 * 算法：algorithm 具体定义参考{@link AlgorithmConstants  ALG_DES} or {@link AlgorithmConstants  ALG_3DES}
 	 */
 	public int algorithm;
+	
+	public KeyInfo(int keyType, int masterKeyID, int keyID, int algorithm){
+		this.keyType = keyType;
+		this.masterKeyID = masterKeyID;
+		this.keyID = keyID;
+		this.algorithm = algorithm;
+	}
 }
