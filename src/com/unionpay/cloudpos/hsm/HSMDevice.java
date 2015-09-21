@@ -118,7 +118,7 @@ public interface HSMDevice extends Device{
      * @param keySize       密钥长度，目前只支持2048位。
      * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档。
      */
-    void generateKeyPair(String aliasPrivateKey, String algorithm, int keySize) throws DeviceException;
+    void generateKeyPair(String aliasPrivateKey, int algorithm, int keySize) throws DeviceException;
     
     /**
      * 注入终端公钥证书。

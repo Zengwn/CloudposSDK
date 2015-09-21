@@ -38,8 +38,9 @@ public class DeviceException extends Exception {
 
     /**
      * 设备不支持该功能的调用:
+     * 
      */
-    public static final int NO_IMPLMENET = -2;
+    public static final int NO_IMPLEMENT = -2;
     /**
      * <ul>
      * <li>一个异步方法还在执行中，调用了非<code>cancelRequest</code>方法，<code>open()</code>方法除外（这种情况下应该是是BAD_CONTROL_MODE）。
