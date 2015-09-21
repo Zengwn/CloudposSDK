@@ -34,5 +34,5 @@ public interface SmartCardReaderOperationResult extends OperationResult{
      * @see CPUCard
      * @see SLE4442Card
      */
-    Card getCard()throws DeviceException;
+    Card getCard();
 }
