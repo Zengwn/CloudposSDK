@@ -12,9 +12,6 @@ package com.unionpay.cloudpos.printer;
 
 import java.util.HashMap;
 
-import android.util.Log;
-
-
 
 /**
  * 打印格式根接口，程序定义的打印格式必须实现该接口。
@@ -64,11 +61,9 @@ public class Format {
      */
     public void setParameter(String key, String value){
     	 if (key.indexOf('=') != -1 || key.indexOf(';') != -1) {
-             Log.e(TAG, "Key \"" + key + "\" contains invalid character (= or ;)");
              return;
          }
          if (value.indexOf('=') != -1 || value.indexOf(';') != -1) {
-             Log.e(TAG, "Value \"" + value + "\" contains invalid character (= or ;)");
              return;
          }
          mMap.put(key, value);
