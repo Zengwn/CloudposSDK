@@ -21,11 +21,10 @@ import android.util.Log;
  * @date August 06, 2015 
  */
 public class Format {
-	private static final String TAG = "Format";
 	
 	private HashMap<String, String> mMap;
 
-    private Format() {
+    public Format() {
         mMap = new HashMap<String, String>();
     }
 	
