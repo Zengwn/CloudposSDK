@@ -225,26 +225,26 @@ public interface HSMDevice extends Device{
      * <br>
      * 该操作需要只读权限。
      * 
-     * @param aigorithm 加密算法。
+     * @param algorithm 加密算法。
      * @param aliasPrivateKey   私钥别名。
      * @param bufPlain          加密数据明文 。
      * @return     加密结果。
      * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档。
      */
-    byte[] encrypt(String aigorithm,String aliasPrivateKey, byte[] bufPlain) throws DeviceException;
+    byte[] encrypt(int algorithm,String aliasPrivateKey, byte[] bufPlain) throws DeviceException;
     
     /**
      * 使用终端私钥解密数据。解密结果默认使用PKCS1Padding。
      * <br>
      * 该操作需要只读权限。
      * 
-     * @param aigorithm 解密算法。
+     * @param algorithm 解密算法。
      * @param aliasPrivateKey   私钥别名。
      * @param bufCipher         解密数据密文 。
      * @return     解密结果。
      * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档。
      */
-    byte[] decrypt(String aigorithm, String aliasPrivateKey, byte[] bufCipher) throws DeviceException;
+    byte[] decrypt(int algorithm, String aliasPrivateKey, byte[] bufCipher) throws DeviceException;
     
     /**
      * 返回硬件加密接口的剩余或可用空闲空间。
