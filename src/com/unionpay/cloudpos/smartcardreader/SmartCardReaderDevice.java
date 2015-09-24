@@ -40,7 +40,6 @@ public interface SmartCardReaderDevice extends Device, TimeConstants {
      * logicalID的范围从0到设备支持的最大卡槽数-1   
      * @param logicalID 打开IC卡读卡器的设备编号，0对应底部的插槽，1、2、3对应终端背面的PSAM卡槽
      * @throws DeviceException 参考{@link DeviceException DeviceException}中的定义
-     * @throws IllegalArgumentException 参数错误
      */
     void open(int logicalID) throws DeviceException;
 

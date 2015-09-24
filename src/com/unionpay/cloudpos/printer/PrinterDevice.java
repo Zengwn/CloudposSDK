@@ -117,7 +117,6 @@ public interface PrinterDevice extends Device, TimeConstants
     * 
     * @param logicalID  打印机逻辑ID，默认为0。
     * @throws DeviceException 参考{@link DeviceException DeviceException}中的定义。
-    * @throws IllegalArgumentException 参数错误。
     */
     void open(int logicalID) throws DeviceException;
 
@@ -126,7 +125,6 @@ public interface PrinterDevice extends Device, TimeConstants
     * 
     * @param  message 打印的字符串数据。
     * @throws DeviceException 参考{@link DeviceException DeviceException}中的定义。
-    * @throws IllegalArgumentException 参数错误。
     */
    void printText(String message) throws DeviceException;
    
@@ -136,7 +134,6 @@ public interface PrinterDevice extends Device, TimeConstants
     * @param format 用于控制字符串格式。
     * @param  message 打印的字符串数据。
     * @throws DeviceException 参考{@link DeviceException DeviceException}中的定义。
-    * @throws IllegalArgumentException 参数错误。
     */
    void printText(Format format, String message) throws DeviceException;
    /**

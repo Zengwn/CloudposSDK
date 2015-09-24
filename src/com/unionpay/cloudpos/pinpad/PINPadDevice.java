@@ -101,9 +101,6 @@ public interface PINPadDevice extends Device {
      * 
      * @param logicalID 设备逻辑ID，默认1。
      * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档。
-     * @throws IllegalArgumentException <ul>
-     *             <li>非法<code>logicalID</code></li>
-     *             </ul>
      */
     void open(int logicalID) throws DeviceException;
 

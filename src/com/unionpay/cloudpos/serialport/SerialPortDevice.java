@@ -103,7 +103,6 @@ public interface SerialPortDevice extends Device {
      * 
      * @param logicID 串口设备逻辑ID
      * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档。
-     * @throws IllegalArgumentException 
      */
     void open(int logicID) throws DeviceException;
 
@@ -190,7 +189,6 @@ public interface SerialPortDevice extends Device {
      *             <li>FLOWCONTROL_XONXOFF_IN_OUT - XON/XOFF输入/输出 软流控
      *            </ul>
      * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档。
-     * @throws IllegalArgumentException 
      */
     void changeFlowControlMode(int flowControl) throws DeviceException;
 
@@ -231,7 +229,6 @@ public interface SerialPortDevice extends Device {
      *            PARITY_EVEN - even parity
      *            </ul>
      * @throws DeviceException  具体定义参考{@link DeviceException DeviceException}的文档。
-     * @throws IllegalArgumentException 
      */
     void changeSerialPortParams(int baudrate, int dataBits, int stopBits, int parity)
             throws DeviceException;
@@ -244,7 +241,6 @@ public interface SerialPortDevice extends Device {
      * @param offset 数据中的起始偏移量。
      * @param len 要写入的字节数。
      * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档。
-     * @throws IllegalArgumentException 如果发生参数错误
      */
     void write(byte[] data, int offset, int len) throws DeviceException;
 
@@ -304,7 +300,6 @@ public interface SerialPortDevice extends Device {
      * @param timeout 超时
      * @return 操作结果<code>SerialPortOperationResult</code>
      * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档。  
-     * @throws IllegalArgumentException
      * 
      * @see SerialPortOperationResult
      * @see TimeConstants#FOREVER

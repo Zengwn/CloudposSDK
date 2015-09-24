@@ -40,9 +40,6 @@ public interface IDCardReaderDevice extends Device {
      * 
      * @param logicalID 模块的逻辑ID
      * @throws DeviceException  具体定义参考{@link DeviceException DeviceException}的文档。
-     * @throws IllegalArgumentException <ul>
-     *             <li>非法<code>logicalID</code></li>
-     *             </ul>
      */
     void open(int logicalID) throws DeviceException;
 
@@ -91,7 +88,6 @@ public interface IDCardReaderDevice extends Device {
      * @param timeout 最大扫描时间，通过时间常量设定。
      * @return 操作结果
      * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档。
-     * @throws IllegalArgumentException 非法的<code>timeout</code>
      */
     IDCardReaderOperationResult waitForCardPresent(int timeout) throws DeviceException;
 }

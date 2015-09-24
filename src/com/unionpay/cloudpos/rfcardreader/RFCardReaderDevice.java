@@ -114,9 +114,6 @@ public interface RFCardReaderDevice extends Device, TimeConstants {
      * @param logicalID 读卡器逻辑ID
      * @param mode 通讯模式
      * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档。
-     * @throws IllegalArgumentException <ul>
-     *             <li>非法<code>logicalID</code></li> <li>错误的<code>mode</code></li>
-     *             </ul>
      */
     void open(int logicalID, int mode) throws DeviceException;
 

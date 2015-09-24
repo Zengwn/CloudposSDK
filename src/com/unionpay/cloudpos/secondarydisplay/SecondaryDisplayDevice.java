@@ -39,10 +39,6 @@ public interface SecondaryDisplayDevice extends Device  {
      * @param logicalID  客显模块逻辑ID
      *
      * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档。
-     * @throws IllegalArgumentException
-     *         <ul>
-     *         <li>非法<code>logicalID</code></li>
-     *         </ul>
      */
 	public void open(int logicalID) throws DeviceException;
 	
@@ -52,7 +48,6 @@ public interface SecondaryDisplayDevice extends Device  {
      * @param color  颜色值
      *
      * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档。
-     * @throws IllegalArgumentException
      *
      */
 	public void setBackgroundColor(int color)throws DeviceException;
@@ -64,7 +59,6 @@ public interface SecondaryDisplayDevice extends Device  {
      * @param offsetX 图片显示位置：距离左上角的x方向位置
      * @param offsetY 图片显示位置：距离左上角y方向位置
      * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档。
-     * @throws IllegalArgumentException
      */
 	public void display(Bitmap bitmap,int offsetX, int offsetY)throws DeviceException;
 	
@@ -74,7 +68,6 @@ public interface SecondaryDisplayDevice extends Device  {
      * @param bitmap 位图
      *
      * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档。
-     * @throws IllegalArgumentException
      */
 	public void display(Bitmap bitmap)throws DeviceException;
 	

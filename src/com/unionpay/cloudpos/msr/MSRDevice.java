@@ -40,7 +40,6 @@ public interface MSRDevice extends Device, TimeConstants {
      * <p>设备对象打开磁条卡阅读器的某个卡槽，再打开该磁条卡阅读器的另外一个卡槽，会抛出异常{@link DeviceException#BAD_CONTROL_MODE BAD_CONTROL_MODE}。
      * @param logicalID 读卡器逻辑ID（卡槽ID），默认是1。
      * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档。
-     * @throws IllegalArgumentException 输入参数为非法读卡器逻辑ID。
      */
     void open(int logicalID) throws DeviceException;
 
