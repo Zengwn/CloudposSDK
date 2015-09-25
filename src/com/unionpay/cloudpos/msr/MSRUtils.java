@@ -10,6 +10,8 @@
 
 package com.unionpay.cloudpos.msr;
 
+import android.content.Context;
+
 import com.unionpay.cloudpos.DeviceException;
 import com.unionpay.cloudpos.POSTerminal;
 import com.unionpay.cloudpos.TimeConstants;
@@ -37,9 +39,8 @@ public class MSRUtils {
      * @return 操作结果。
      * @throws DeviceException。
      */
-    MSROperationResult waitForSwipe(int timeout) throws DeviceException {
-        MSRDevice msrdevice = (MSRDevice) POSTerminal.getInstance().getDevice(
-        		"cloudpos.device.msr");
+    MSROperationResult waitForSwipe(int timeout ,Context context) throws DeviceException {
+        MSRDevice msrdevice = (MSRDevice) POSTerminal.getInstance(context).getDevice("cloudpos.device.msr");
         MSROperationResult res = null;
         msrdevice.open();
         try {
