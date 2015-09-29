@@ -59,7 +59,10 @@ public abstract class POSTerminal {
     private static final String LOAD_JAR_PATH = "/data/cloudpossdk/cloudpossdkimpl.jar";
 
     /**
-     * 返回设备管理器的实现。
+     * 返回设备管理器的实例对象。终端系统默认的className是：“com.unionpay.cloudpos.impl.POSTerminalImpl”
+     * <p>可以通过System.setProperty(POSTerminal.POS_TERMINAL_CLASS, "com.unionpay.cloudpos.impl.POSTerminalImpl")设置系统属性。
+     * <p>如果未设置，将取默认名称。
+     *
      * 
      * @return 设备管理器
      */
@@ -68,6 +71,9 @@ public abstract class POSTerminal {
             self = null;
             Object terminalObj = null;
             String className = System.getProperty(POS_TERMINAL_CLASS);
+            if(className==null){
+                className = "com.unionpay.cloudpos.impl.POSTerminalImpl";
+            }
             try {
             	//从系统指定路径中加载sdk实现。
             	File dexOutputDir = context.getDir("dex", Context.MODE_PRIVATE);
