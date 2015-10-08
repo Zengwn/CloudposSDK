@@ -57,6 +57,8 @@ public abstract class POSTerminal {
      *  SDK实现jar包的路径。
      * */
     private static final String LOAD_JAR_PATH = "/data/cloudpossdk/cloudpossdkimpl.jar";
+    
+    private static Context androidContext = null;
 
     /**
      * 返回设备管理器的实例对象。终端系统默认的className是：“com.unionpay.cloudpos.impl.POSTerminalImpl”
@@ -67,8 +69,8 @@ public abstract class POSTerminal {
      * @return 设备管理器
      */
     public static synchronized POSTerminal getInstance(Context context) {
+        androidContext = context;
         if (self == null) {
-            self = null;
             Object terminalObj = null;
             String className = System.getProperty(POS_TERMINAL_CLASS);
             if(className==null){
@@ -111,6 +113,14 @@ public abstract class POSTerminal {
         return self;
     }
     
+    /**
+     * 返回context。
+     * 
+     * @return Context
+     */
+    public Context getAndroidContext(){
+        return androidContext;
+    }
     /**
      * 返回终端的详细描述。
      * 
