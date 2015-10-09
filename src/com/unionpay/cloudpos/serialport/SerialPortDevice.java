@@ -129,7 +129,7 @@ public interface SerialPortDevice extends Device {
      * 返回停止位。
      * <p>
      * 
-     * @return 停止位是一下常量：STOPBITS_1,
+     * @return 停止位是以下常量：STOPBITS_1,
      *         STOPBITS_2, or STOPBITS_1_5
      * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档。
      */
@@ -300,7 +300,6 @@ public interface SerialPortDevice extends Device {
      * @param timeout 超时
      * @return 操作结果<code>SerialPortOperationResult</code>
      * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档。  
-     * 
      * @see SerialPortOperationResult
      * @see TimeConstants#FOREVER
      * @see TimeConstants#IMMEDIATE

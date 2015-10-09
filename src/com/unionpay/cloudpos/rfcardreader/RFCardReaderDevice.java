@@ -153,11 +153,7 @@ public interface RFCardReaderDevice extends Device, TimeConstants {
      * <p>
      * 根据底层定义只能返回一张卡片。结果可以通过
      * {@link RFCardReaderOperationResult#getCard()}获得。
-     * 如果读卡设备上放入多张卡片，可能会有以下两种实现方式：
-     * <ul>
-     * <li>返回错误：{@link RFCardReaderOperationResult#ERR_MULTI_CARD ERR_MULTI_CARD}，不返回任何卡片。
-     * <li>返回某一卡片。
-     * </ul>
+     * 如果读卡设备上放入多张卡片，返回错误：{@link RFCardReaderOperationResult#ERR_MULTI_CARD ERR_MULTI_CARD}，不返回任何卡片。
      * 本方法会按照{@link #setSpeed(int) setSpeed(int)}定义的参数扫描卡片。如果没有定义，本方法会按照读卡器默认参数扫描。
      * <p>
      * 本方法会正确响应

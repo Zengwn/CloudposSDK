@@ -45,7 +45,7 @@ public interface SLE4442Card extends MemoryCard {
     /**
      * 读取内存卡的数据。
      * 
-     * @param area 读取的区域标志，包括一下常量：
+     * @param area 读取的区域标志，包括以下常量：
      *            <dl>
      *            <dd>{@link #MEMORY_CARD_AREA_MAIN} <dd>{@link #MEMORY_CARD_AREA_PROTECTED} <dd>
      *            {@link #MEMORY_CARD_AREA_SECURITY}
