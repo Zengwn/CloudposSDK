@@ -47,10 +47,11 @@ public interface Device {
      * 一旦close了，只有重新open才能让这个设备对象和设备建立连接。
      * <p>
      * 如果已经打开设备的应用进程消失，则自动关闭对设备的占用。
+     * <p>
+     * 如果之前有异步请求，那么关闭设备，之前的异步请求自动取消。
      * @throws DeviceException 包括以下code:
      *             <ul>
      *             <li>BAD_CONTROL_MODE - 如果该设备没有被open 
-     *             <li>REQUEST_PENDING - 如果还有一个异步调用正在进行中
      *             </ul>
      */
     void close() throws DeviceException;

@@ -34,7 +34,7 @@ public class KeyInfo {
 	 *  密钥索引。
 	 * <p>如果在密钥类型是主密钥/会话密钥{@link PINPadDevice  KEY_TYPE_MK_SK}情况下，只能使用以下常量：{@link PINPadDevice  USER_KEY_ID_PIN},
 	 * {@link PINPadDevice  USER_KEY_ID_MAC}，{@link PINPadDevice  USER_KEY_ID_DATA}
-	 * <p>如果密钥类型是其他四种，表示选定的密钥索引。
+	 * <p>如果密钥类型是其他三种，表示选定的密钥索引。
 	 */
 	public int keyID;
 	

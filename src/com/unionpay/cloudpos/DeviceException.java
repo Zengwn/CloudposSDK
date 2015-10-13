@@ -28,7 +28,6 @@ public class DeviceException extends Exception {
     /**
      * 设备device没有处于合适的状态，比如：
      * <ul>
-     * <li>如果在没有异步方法正在执行的时候，使用者调用了{@link #cancelRequest()}方法。
      * <li>如果设备在已经open的情况下，使用者再次调用了<code>open()</code>方法。
      * <li>如果设备在没有open的情况下，使用者调用了设备任何一个设备操作方法。
      * <li>某些设备的一些方法，在不合适的情况下被调用了。具体看每个设备的方法定义。
