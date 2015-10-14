@@ -115,7 +115,7 @@ public interface PrinterDevice extends Device, TimeConstants
     * <p>设备对象去打开某个已经打开（被当前设备对象或其他设备对象）的逻辑ID的打印机会抛出异常{@link DeviceException#BAD_CONTROL_MODE BAD_CONTROL_MODE}。
     * <p>设备对象打开某个逻辑ID的打印机，再打开另外一个逻辑ID的打印机，会抛出异常{@link DeviceException#BAD_CONTROL_MODE BAD_CONTROL_MODE}。
     * 
-    * @param logicalID  打印机逻辑ID，默认为0。
+    * @param logicalID  打印机逻辑ID，
     * @throws DeviceException 参考{@link DeviceException DeviceException}中的定义。
     */
     void open(int logicalID) throws DeviceException;

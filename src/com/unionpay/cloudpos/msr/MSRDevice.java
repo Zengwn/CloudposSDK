@@ -38,7 +38,7 @@ public interface MSRDevice extends Device, TimeConstants {
      * <p>打开成功，设备对象就和相应的磁条卡阅读器的卡槽建立了连接。此后可以进行后面的各项操作。
      * <p>设备对象去打开某个已经打开（被当前设备对象或其他设备对象）的磁条卡阅读器的卡槽会抛出异常{@link DeviceException#BAD_CONTROL_MODE BAD_CONTROL_MODE}。
      * <p>设备对象打开磁条卡阅读器的某个卡槽，再打开该磁条卡阅读器的另外一个卡槽，会抛出异常{@link DeviceException#BAD_CONTROL_MODE BAD_CONTROL_MODE}。
-     * @param logicalID 读卡器逻辑ID（卡槽ID），默认是1。
+     * @param logicalID 读卡器逻辑ID（卡槽ID），
      * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档。
      */
     void open(int logicalID) throws DeviceException;

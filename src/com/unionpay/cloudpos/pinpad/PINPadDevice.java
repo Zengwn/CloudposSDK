@@ -99,7 +99,7 @@ public interface PINPadDevice extends Device {
      * 打开某个逻辑ID的PIN输入设备。
      * <p>
      * 
-     * @param logicalID 设备逻辑ID，默认1。
+     * @param logicalID 设备逻辑ID，
      * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档。
      */
     void open(int logicalID) throws DeviceException;
