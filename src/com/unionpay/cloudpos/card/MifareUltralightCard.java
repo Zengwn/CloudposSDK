@@ -43,13 +43,5 @@ public interface MifareUltralightCard extends MemoryCard {
      * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档。
      */
 	void write(int blockIndex,  byte[] data) throws DeviceException;
-	/**
-     * 发送apdu数据给接收设备并接收响应数据.
-     *
-     * @param apdu APDU数据流
-     * @return 返回的APDU数据
-     * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档。
-     */
-	byte[] transmit(byte[] apdu)  throws DeviceException;
-
+	
 }

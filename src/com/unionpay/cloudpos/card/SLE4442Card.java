@@ -34,6 +34,22 @@ public interface SLE4442Card extends MemoryCard {
      */
     int MEMORY_CARD_AREA_SECURITY =2;
 	
+    /**
+     * 连接卡片，并返回卡片的ATR信息。
+     * <p>
+     * @return 卡片的ATR信息
+     * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档：
+     */
+    ATR connect() throws DeviceException;
+    
+    /**
+     * 断开卡片。
+     * <p>
+     *
+     * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档：
+     */
+    void disconnect() throws DeviceException;
+    
 	/**
      * 使用给定的密钥，验证memory卡。
      * 

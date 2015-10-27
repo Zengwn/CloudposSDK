@@ -23,6 +23,22 @@ import com.unionpay.cloudpos.DeviceException;
 public interface CPUCard extends Card {
 	
     /**
+     * 连接卡片，并返回卡片的ATR信息。
+     * <p>
+     * @return 卡片的ATR信息
+     * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档：
+     */
+    ATR connect() throws DeviceException;
+    
+    /**
+     * 断开卡片。
+     * <p>
+     *
+     * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档：
+     */
+    void disconnect() throws DeviceException;
+    
+    /**
      * 在CPU卡和CPU卡读卡器之间传递信息。
      * <p> APDU--ApplicationProtocolDataUnit--应用协议数据单元,是智能卡与智能卡读卡器之间传送的信息单元.
      * <p> 如果在发送命令前，需要选卡、唤醒等操作，由底层自动实现。

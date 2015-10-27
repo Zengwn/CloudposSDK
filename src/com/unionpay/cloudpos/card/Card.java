@@ -53,7 +53,6 @@ public interface Card {
 	public static final int STATUS_ABSENT = 2;
 	
 	
-	
     /**
      * 返回卡片的ID。
      * <p>
@@ -63,23 +62,7 @@ public interface Card {
      */
     byte[] getID() throws DeviceException;
     
-    /**
-     * 连接卡片，并返回卡片的ATR信息。
-     * <p>
-     * @return 卡片的ATR信息
-     * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档：
-     */
-    ATR connect() throws DeviceException;
-    
-    /**
-     * 断开卡片。
-     * <p>
-     *
-     * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档：
-     */
-    void disconnect() throws DeviceException;
-    
-    /**
+     /**
      * 返回表达当前卡槽和卡片通讯协议的常量。
      * <p>
      * 本方法是个同步方法。当卡槽中有卡片存在，并且成功open,并得到了卡对象，可以被随时读取。
