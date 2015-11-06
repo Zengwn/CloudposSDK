@@ -188,7 +188,7 @@ public interface PINPadDevice extends Device {
      * <p>方法通过设置timeout来决定最多等待多长时间。请求开始执行的时候timeout开始计时。
      * <p>如果timeout时间到了，但还没有任何输入，也会回调函数handleResult()。此时
      * OperationResult会返回错误：{@link OperationResult#ERR_TIMEOUT ERR_TIMEOUT}，同时没有任何数据返回。
-     * <p>如果timeout是{@link TimeConstants#FOREVER FOREVER}，方法会一直等待，直到有数据返回或取消。
+     * <p>如果timeout是{@link TimeConstants#FOREVER FOREVER}，方法的等待时间为PinPad的超时时间，在超时时间内会有数据返回或取消。如果到了PinPad的超时时间，没有任何输入，按timeout超时处理。
      * <p>如果timeout是{@link TimeConstants#IMMEDIATE IMMEDIATE}，方法会马上返回。
      * <p>本方法会正确响应
      * {@link #cancelRequest()}方法来取消操作。

@@ -130,6 +130,9 @@ public interface PrinterDevice extends Device, TimeConstants
    
    /**
     * 打印字符串。
+    * <p>通过format对象来控制打印字符串的格式。如果通过这个接口传入了format对象，那么打印机后续的打印也按照这个format对象所包含的格式来执行。
+    * <p>如果有新的带有format对象的接口被调用，那么会合并新的格式。打印机后续的打印也按照新的合并后的格式执行。
+    * <p>合并的原则是：新的format对象中存在旧的format对象中不存在的格式，那么该格式会包含进去；新旧format中都存在的，用新的格式替换旧的。
     * 
     * @param format 用于控制字符串格式。
     * @param  message 打印的字符串数据。
@@ -145,7 +148,9 @@ public interface PrinterDevice extends Device, TimeConstants
    void printBitmap(Bitmap bitmap) throws DeviceException;
    /**
     * 打印图片。
-    * 
+    * <p>通过format对象来控制打印图片的格式。如果通过这个接口传入了format对象，那么打印机后续的打印也按照这个format对象所包含的格式来执行。
+    * <p>如果有新的带有format对象的接口被调用，那么会合并新的格式。打印机后续的打印也按照新的合并后的格式执行。
+    * <p>合并的原则是：新的format对象中存在旧的format对象中不存在的格式，那么该格式会包含进去；新旧format中都存在的，用新的格式替换旧的。
     * @param bitmap。
     * @param format 参考{@link Format Format}中的定义。
     * @throws DeviceException 参考{@link DeviceException DeviceException}中的定义。
@@ -153,7 +158,9 @@ public interface PrinterDevice extends Device, TimeConstants
    void printBitmap(Format format,Bitmap bitmap) throws DeviceException;
    /**
     * 打印条码。
-    * 
+    * <p>通过format对象来控制打印条码的格式。如果通过这个接口传入了format对象，那么打印机后续的打印也按照这个format对象所包含的格式来执行。
+    * <p>如果有新的带有format对象的接口被调用，那么会合并新的格式。打印机后续的打印也按照新的合并后的格式执行。
+    * <p>合并的原则是：新的format对象中存在旧的format对象中不存在的格式，那么该格式会包含进去；新旧format中都存在的，用新的格式替换旧的。
     * @param format 条码格式，参考{@link Format Format}中的定义。
     * @param barcodeType，见本接口定义的常量。
     * @param barcode 条码内容。
@@ -186,7 +193,7 @@ public interface PrinterDevice extends Device, TimeConstants
    int queryStatus() throws DeviceException;
    
    /**
-    * 返回打印格式。    
+    * 返回默认的打印格式。    
     * 
     * @return 打印格式。
     * @throws DeviceException 参考{@link DeviceException DeviceException}中的定义。
