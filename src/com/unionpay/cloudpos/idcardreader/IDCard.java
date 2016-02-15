@@ -18,98 +18,98 @@ import android.graphics.Bitmap;
  * @date August 10, 2015
  */
 public class IDCard {
-	public IDCard(String name, String sex, String nation, String birthday, String address, String idcardno, String grantdept, String validFromDate, String validToDate, String reserved, Bitmap bitmap) {
-		this.name = name;
-		this.sex = sex;
-		this.nation = nation;
-		this.birthday = birthday;
-		this.address = address;
-		this.idcardno = idcardno;
-		this.grantdept = grantdept;
-		this.validFromDate = validFromDate;
-		this.validToDate = validToDate;
-		this.reserved = reserved;
-		this.bitmap = bitmap;
-	}
-	private String name;
-	private String sex;
-	private String nation;
-	private String birthday;
-	private String address;
-	private String idcardno;
-	private String grantdept;
-	private String validFromDate;
-	private String validToDate;
-	private String reserved;
-	private Bitmap bitmap;
-	private final String[] nations = {
-			"解码错",			// 00
-			"汉",			// 01
-			"蒙古",			// 02
-			"回",			// 03
-			"藏",			// 04
-			"维吾尔",			// 05
-			"苗",			// 06
-			"彝",			// 07
-			"壮",			// 08
-			"布依",			// 09
-			"朝鲜",			// 10
-			"满",			// 11
-			"侗",			// 12
-			"瑶",			// 13
-			"白",			// 14
-			"土家",			// 15
-			"哈尼",			// 16
-			"哈萨克",			// 17
-			"傣",			// 18
-			"黎",			// 19
-			"傈僳",			// 20
-			"佤",			// 21
-			"畲",			// 22
-			"高山",			// 23
-			"拉祜",			// 24
-			"水",			// 25
-			"东乡",			// 26
-			"纳西",			// 27
-			"景颇",			// 28
-			"柯尔克孜",		// 29
-			"土",			// 30
-			"达斡尔",			// 31
-			"仫佬",			// 32
-			"羌",			// 33
-			"布朗",			// 34
-			"撒拉",			// 35
-			"毛南",			// 36
-			"仡佬",			// 37
-			"锡伯",			// 38
-			"阿昌",			// 39
-			"普米",			// 40
-			"塔吉克",			// 41
-			"怒",			// 42
-			"乌孜别克",		// 43
-			"俄罗斯",			// 44
-			"鄂温克",			// 45
-			"德昴",			// 46
-			"保安",			// 47
-			"裕固",			// 48
-			"京",			// 49
-			"塔塔尔",			// 50
-			"独龙",			// 51
-			"鄂伦春",			// 52
-			"赫哲",			// 53
-			"门巴",			// 54
-			"珞巴",			// 55
-			"基诺",			// 56
-			"编码错",			// 57
-			"其他",			// 97
-			"外国血统"			// 98
-	};
+    public IDCard(String name, String sex, String nation, String birthday, String address, String idcardno, String grantdept, String validFromDate, String validToDate, String reserved, Bitmap bitmap) {
+        this.name = name;
+        this.sex = sex;
+        this.nation = nation;
+        this.birthday = birthday;
+        this.address = address;
+        this.idcardno = idcardno;
+        this.grantdept = grantdept;
+        this.validFromDate = validFromDate;
+        this.validToDate = validToDate;
+        this.reserved = reserved;
+        this.bitmap = bitmap;
+    }
+    private String name;
+    private String sex;
+    private String nation;
+    private String birthday;
+    private String address;
+    private String idcardno;
+    private String grantdept;
+    private String validFromDate;
+    private String validToDate;
+    private String reserved;
+    private Bitmap bitmap;
+    private final String[] nations = {
+            "解码错",          // 00
+            "汉",            // 01
+            "蒙古",           // 02
+            "回",            // 03
+            "藏",            // 04
+            "维吾尔",          // 05
+            "苗",            // 06
+            "彝",            // 07
+            "壮",            // 08
+            "布依",           // 09
+            "朝鲜",           // 10
+            "满",            // 11
+            "侗",            // 12
+            "瑶",            // 13
+            "白",            // 14
+            "土家",           // 15
+            "哈尼",           // 16
+            "哈萨克",          // 17
+            "傣",            // 18
+            "黎",            // 19
+            "傈僳",           // 20
+            "佤",            // 21
+            "畲",            // 22
+            "高山",           // 23
+            "拉祜",           // 24
+            "水",            // 25
+            "东乡",           // 26
+            "纳西",           // 27
+            "景颇",           // 28
+            "柯尔克孜",     // 29
+            "土",            // 30
+            "达斡尔",          // 31
+            "仫佬",           // 32
+            "羌",            // 33
+            "布朗",           // 34
+            "撒拉",           // 35
+            "毛南",           // 36
+            "仡佬",           // 37
+            "锡伯",           // 38
+            "阿昌",           // 39
+            "普米",           // 40
+            "塔吉克",          // 41
+            "怒",            // 42
+            "乌孜别克",     // 43
+            "俄罗斯",          // 44
+            "鄂温克",          // 45
+            "德昴",           // 46
+            "保安",           // 47
+            "裕固",           // 48
+            "京",            // 49
+            "塔塔尔",          // 50
+            "独龙",           // 51
+            "鄂伦春",          // 52
+            "赫哲",           // 53
+            "门巴",           // 54
+            "珞巴",           // 55
+            "基诺",           // 56
+            "编码错",          // 57
+            "其他",           // 97
+            "外国血统"          // 98
+    };
     /**
      * 获取姓名
      * @return
      */
     public String getName(){
-    	return name;
+        return name;
     };
 
     /**
@@ -117,7 +117,7 @@ public class IDCard {
      * @return
      */
     public String getSex(){
-    	return sex;
+        return sex;
     };
 
     /**
@@ -125,17 +125,17 @@ public class IDCard {
      * @return
      */
     public String getNation(){
-    	int nationcode = Integer.parseInt(nation);
-		if (nationcode>=1 && nationcode<=56) {
-			this.nation = nations[nationcode];			
-		} else if (nationcode == 97) {
-			this.nation = "其他";
-		} else if (nationcode == 98) {
-			this.nation = "外国血统";
-		} else {
-			this.nation = "编码错";
-		}
-    	return nation;
+        int nationcode = Integer.parseInt(nation);
+        if (nationcode>=1 && nationcode<=56) {
+            this.nation = nations[nationcode];          
+        } else if (nationcode == 97) {
+            this.nation = "其他";
+        } else if (nationcode == 98) {
+            this.nation = "外国血统";
+        } else {
+            this.nation = "编码错";
+        }
+        return nation;
     };
 
     /**
@@ -143,7 +143,7 @@ public class IDCard {
      * @return
      */
     public String getBorn(){
-    	return birthday;
+        return birthday;
     };
 
     /**
@@ -151,7 +151,7 @@ public class IDCard {
      * @return
      */
     public String getAddress(){
-    	return address;
+        return address;
     };
 
     /**
@@ -159,7 +159,7 @@ public class IDCard {
      * @return
      */
     public String getIDCardNo(){
-    	return idcardno;
+        return idcardno;
     };
 
     /**
@@ -167,7 +167,7 @@ public class IDCard {
      * @return
      */
     public String getGrantDept(){
-    	return grantdept;
+        return grantdept;
     };
 
     /**
@@ -175,14 +175,14 @@ public class IDCard {
      * @return
      */
     public String getValidFromDate(){
-    	return validFromDate;
+        return validFromDate;
     };
     /**
      * 获取有效期结束日期
      * @return
      */
     public String getValidToDate(){
-    	return validToDate;
+        return validToDate;
     };
 
     /**
@@ -190,7 +190,7 @@ public class IDCard {
      * @return
      */
     public String getReserved(){
-    	return reserved;
+        return reserved;
     };
 
     /**
@@ -198,8 +198,8 @@ public class IDCard {
      * @return
      */
     public Bitmap getPicture(){
-    	
-    	return bitmap;
+        
+        return bitmap;
     };
 
 }

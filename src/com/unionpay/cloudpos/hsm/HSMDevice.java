@@ -39,8 +39,7 @@ import com.unionpay.cloudpos.DeviceException;
  *         (HSMDevice) POSTerminal.getInstance().getDevice("cloudpos.device.hsm");
  * </pre>
  * 其中，"cloudpos.device.hsm"是标识安全模块设备的字符串，由具体的实现定义。
- * 硬件安全模块设备操作分为只读权限和读写权限。在只读权限下，它是非独占设备，可以多个设备对象同时使用；
- * 但是，在读写权限下同时只能有一个设备对象打开设备。
+ * 硬件安全模块设备是非独占设备，但写操作必须独占打开的设备。
  * <p>
  * 为了正常访问硬件安全模块设备，请在Android Manifest文件中设置硬件安全模块访问权限，具体如下所示：
  * <pre> &lt;uses-permission android:name="android.permission.CLOUDPOS_SAFE_MODULE" /&gt;
@@ -87,7 +86,7 @@ public interface HSMDevice extends Device{
      * 检查安全模块是否已经触发。
      * 硬件安全模块有自动保护机制，如果发生对安全模块的攻击，会自动触发自毁并删除所有敏感信息。
      * <p>
-     * 该操作需要只读权限。
+     * 该操作是非独占的。
      *  
      * @return  {@code true}触发，{@code false} 未触发.
      * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档。
@@ -97,7 +96,7 @@ public interface HSMDevice extends Device{
     /**
      * 从安全模块返回真随机数。
      * <p>
-     * 该操作只需要只读权限。
+     * 该操作是非独占的。
      * 
      * @param length   需要返回随机数的长度 < 64。
      * @return  包含随机数的数据流。
@@ -107,7 +106,7 @@ public interface HSMDevice extends Device{
     /**
      * 让安全模块生成密钥对。
      * <br>
-     * 该操作需要读写权限。
+     * 该操作是独占的。
      * 
      * @param aliasPrivateKey         需要生成的私钥（密钥对）的别名。
      * @param algorithm     密钥对支持的算法。
@@ -121,7 +120,7 @@ public interface HSMDevice extends Device{
      * <p>
      * 终端公钥证书一般由终端产生CSR后，向CA提出证书申请，CA为终端签发的表明终端身份的证书。
      * <br>
-     * 该操作需要读写权限。
+     * 该操作是独占的。
      * 
      * @param alias             证书的别名。
      * @param aliasPrivateKey   证书对应的私钥别名。
@@ -142,7 +141,7 @@ public interface HSMDevice extends Device{
      * <li>{@link #CERT_TYPE_COMM_ROOT} 终端通讯根证书的keyUsage标志：DigitalSignature、KeyEncipherment和DataEncipherment标识位必须被设置，其他标识位不能设置。
      * </ul>
      * <p>
-     * 该操作需要读写权限
+     * 该操作是独占的。
      *  
      * @param certType      证书类型：{@link #CERT_TYPE_TERMINAL_OWNER}, {@link #CERT_TYPE_APP_ROOT} 或者 {@link #CERT_TYPE_COMM_ROOT}.
      * @param alias         证书别名。
@@ -156,7 +155,7 @@ public interface HSMDevice extends Device{
     /**
      * 返回证书数据。通过证书类型及证书别名，可返回找到匹配的唯一一张证书。
      * <br>
-     * 该操作需要只读权限。
+     * 该操作是非独占的。
      * 
      * @param certType      证书类型。
      * @param alias         证书别名。
@@ -171,7 +170,7 @@ public interface HSMDevice extends Device{
      * <p>
      * 终端所有者证书和银联的应用根证书不能被删除。
      * <br>
-     * 该操作需要读写权限。
+     * 该操作是独占的。
      * 
      * @param certType      证书类型。
      * @param alias         证书别名。
@@ -183,7 +182,7 @@ public interface HSMDevice extends Device{
     /**
      * 从硬件证书管理与加密运算模块内查询证书。     
      * <br>
-     * 该操作需要读权限。
+     * 该操作是非独占的。
      * 
      * @param certType      证书类型。
      * @return 证书别名数组。
@@ -195,7 +194,7 @@ public interface HSMDevice extends Device{
     /**
      * 删除终端私钥（密钥对）。
      * <br>
-     * 该操作需要读写权限。
+     * 该操作是独占的。
      * 
      * @param aliasPrivateKey         私钥（密钥对）别名。
      * @return {@code true} 成功。{@code false} 失败。
@@ -206,7 +205,7 @@ public interface HSMDevice extends Device{
     /**
      * 生成终端公钥的证书签名请求CSR。
      * <br>
-     * 该操作需要读写权限。
+     * 该操作是独占的。
      * 
      * @param aliasPrivateKey   私钥别名。
      * @param subject          CSR中的主体名称等。
@@ -219,7 +218,7 @@ public interface HSMDevice extends Device{
     /**
      * 使用终端私钥加密数据。加密结果默认使用PKCS1Padding。
      * <br>
-     * 该操作需要只读权限。
+     * 该操作是非独占的。
      * 
      * @param algorithm 加密算法。
      * @param aliasPrivateKey   私钥别名。
@@ -232,7 +231,7 @@ public interface HSMDevice extends Device{
     /**
      * 使用终端私钥解密数据。解密结果默认使用PKCS1Padding。
      * <br>
-     * 该操作需要只读权限。
+     * 该操作是非独占的。
      * 
      * @param algorithm 解密算法。
      * @param aliasPrivateKey   私钥别名。
@@ -245,7 +244,7 @@ public interface HSMDevice extends Device{
     /**
      * 返回硬件加密接口的剩余或可用空闲空间。
      * <br>
-     * 该操作需要只读权限。
+     * 该操作是非独占的。
      * @return     空间大小单位为byte。
      */
     long getFreeSpace() throws DeviceException;

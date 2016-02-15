@@ -17,14 +17,14 @@ import com.unionpay.cloudpos.OperationResult;
 import com.unionpay.cloudpos.TimeConstants;
 
 /**
- * <b>IDCardReaderDevice</b>定义了所有身份证读取设备的接口。
+ * <b>IDCardReaderDevice</b>定义了所有身份证读取身份证的接口。
  * <p>设备对象通过<code>POSTerminal</code>的对应方法获得，如下所示：
  * <pre>
  * IDCardReaderDevice idCardReaderDevice =
  *         (IDCardReaderDevice) POSTerminal.getInstance().getDevice("cloudpos.device.idcardreader");
  * </pre>
- * 其中，"cloudpos.device.idcard"是标识非接读卡器的字符串，由具体的实现定义。
- * <p>身份读取设备对象主要进行身份证卡读取操作。其中等卡及移卡都包括同步和异步两种方式。同步方式会将主线程锁定，直到有结果返回，超时或者被取消。
+ * 其中，"cloudpos.device.idcard"是标识身份证设备的字符串，由具体的实现定义。
+ * <p>身份读取设备对象主要进行身份证卡读取操作。其中等卡都包括同步和异步两种方式。同步方式会将主线程锁定，直到有结果返回，超时或者被取消。
  * 异步方式不会锁定主线程，当有结果时，会回调监听者{@link OperationListener#handleResult(OperationResult) handleResult()}方法。
  * <p>
  * 为了正常访问身份证读取设备，请在Android Manifest文件中设置身份证读取设备访问权限，具体如下所示：
