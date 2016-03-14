@@ -125,7 +125,7 @@ public interface HSMDevice extends Device{
      * @param alias             证书的别名。
      * @param aliasPrivateKey   证书对应的私钥别名。
      * @param bufCert           证书数据流。
-     * @param dataFormat        证书数据格式，目前只支持{@link #FORMAT_PEM}。
+     * @param dataFormat        证书数据格式，目前只支持{@link #CERT_FORMAT_PEM}。
      * @return {@code true} 成功。{@code false} 失败。
      * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档。
      */

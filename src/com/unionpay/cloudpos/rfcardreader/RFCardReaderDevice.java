@@ -61,16 +61,12 @@ public interface RFCardReaderDevice extends Device, TimeConstants {
     /**
      * 通讯速率
      * 
-     * @see #addScanParam(short, short)
-     * @see #scanTargets(int)
      */
     int PARAM_SPEED = 0;
 
     /**
      * 放碰撞卡槽号
      * 
-     * @see #addScanParam(int, int)
-     * @see #scanTargets(int)
      */
     int PARAM_NB_SLOT = 1;
 
@@ -189,15 +185,14 @@ public interface RFCardReaderDevice extends Device, TimeConstants {
      * <p>
      * 由于带有超时，本方法会响应{@link #cancelRequest()}方法
      * <p>
-     * 如果超时发生，会返回这个操作结果：状态为
-     * {@link OperationResult#EVT_ERROR EVT_ERROR}，信息为
+     * 如果超时发生，会返回操作结果为
      * {@link OperationResult#ERR_TIMEOUT ERR_TIMEOUT}，同时没有任何卡片返回。
      * 
      * @param timeout 最大扫描时间，通过时间常量设定。
      * @return 操作结果
      * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档。
      */
-    RFCardReaderOperationResult waitForCardPresent(int timeouat) throws DeviceException;
+    RFCardReaderOperationResult waitForCardPresent(int timeout) throws DeviceException;
     /**
      * 监听卡片移除动作。
      * <p>
@@ -225,10 +220,9 @@ public interface RFCardReaderDevice extends Device, TimeConstants {
      * @param timeout 最大等待时间，通过时间常量设定{@link TimeConstants#SECOND SECOND},{@link TimeConstants#MilliSECOND MilliSECOND},
      * {@link TimeConstants#FOREVER FOREVER},{@link TimeConstants#IMMEDIATE IMMEDIATE}。
      * 
-     * @param listener 操作监听者
      * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档。
      */
-    void listenForCardAbsent(OperationListener listener, int timeouat) throws DeviceException;
+    void listenForCardAbsent(OperationListener listener, int timeout) throws DeviceException;
 
     /**
      * 本方法是上述对应的
@@ -245,6 +239,6 @@ public interface RFCardReaderDevice extends Device, TimeConstants {
      * @return 操作结果
      * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档。
    */
-    RFCardReaderOperationResult waitForCardAbsent(int timeouat) throws DeviceException;
+    RFCardReaderOperationResult waitForCardAbsent(int timeout) throws DeviceException;
 
 }

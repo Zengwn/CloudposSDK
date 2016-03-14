@@ -120,7 +120,6 @@ public interface SmartCardReaderDevice extends Device, TimeConstants {
      * @param timeout 最大等待时间，通过时间常量设定{@link TimeConstants#SECOND SECOND},{@link TimeConstants#MilliSECOND MilliSECOND},
      * {@link TimeConstants#FOREVER FOREVER},{@link TimeConstants#IMMEDIATE IMMEDIATE}。
      * 
-     * @param listener 操作监听者
      * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档。
      */
     void listenForCardAbsent( OperationListener listener, int timeout) throws DeviceException;
@@ -133,8 +132,7 @@ public interface SmartCardReaderDevice extends Device, TimeConstants {
      * <p>
      * 由于带有超时，本方法会响应{@link #cancelRequest()}方法。
      * <p>
-     * 如果超时发生，会返回这个操作结果：状态为
-     * {@link OperationResult#EVT_ERROR EVT_ERROR}，信息为
+     * 如果超时发生，会返回操作结果为
      * {@link OperationResult#ERR_TIMEOUT ERR_TIMEOUT}，同时没有任何卡片返回。
      * 
      * @param timeout 最大等待时间，通过时间常量设定。

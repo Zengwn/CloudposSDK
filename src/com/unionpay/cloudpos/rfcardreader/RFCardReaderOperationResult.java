@@ -19,7 +19,7 @@ import com.unionpay.cloudpos.card.MifareUltralightCard;
 /**
  * <code>RFCardReaderOperationResult</code>是被非接卡读卡设备产生，用来返回非接卡的操作结果
  * <p>
- * {@link OperationResult#getErrorCode() getStatus()}方法继承至{@link OperationResult OperationResult}的对应方法。
+ * {@link OperationResult#getResultCode() getResultCode()}方法继承至{@link OperationResult OperationResult}的对应方法。
  * <p>
  * 这里通过"ERR_"设置了本设备相关的自定义错误，可以在{@link OperationResult#getResultCode() getResultCode（）}返回。
  * 通过{@link RFCardReaderOperationResult#getCard() getCard()}返回非接卡数据对象。

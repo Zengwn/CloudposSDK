@@ -24,12 +24,12 @@ import com.unionpay.cloudpos.TimeConstants;
  */
 public class MSRUtils {
 	/**
-     * 在方法中先调用{@link MSRDevice#open() open()}，然后调用{@link MSRDevice#waitForSwipe() waitForSwipe()}
+     * 在方法中先调用{@link MSRDevice#open() open()}，然后调用{@link MSRDevice#waitForSwipe(int) waitForSwipe(int)}
      * 等待用户刷卡。
      * <p>
      * 只有当超时发生或者操作正常完成，本次调用才会返回。
      * <p>
-     * 由于带有超时，本方法会响应{@link #cancelRequest()}方法。
+     * 由于带有超时，本方法会响应{@link MSRDevice#cancelRequest() cancelRequest()}方法。
      * <p>
      * 如果超时发生，会返回null，同时关闭该设备。
      * 如果返回MSROperationResult，开发者后续自行关闭该设备。

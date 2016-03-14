@@ -149,7 +149,7 @@ public interface SerialPortDevice extends Device {
      * 设置RTS
      * <p>
      * 
-     * @param <code>true</code>设置RTS, <code>false</code>清除RTS
+     * @param rts <code>true</code>设置RTS, <code>false</code>清除RTS
      * @throws DeviceException  具体定义参考{@link DeviceException DeviceException}的文档。
      */
     void changeRTS(boolean rts) throws DeviceException;

@@ -16,7 +16,7 @@ package com.unionpay.cloudpos;
 public interface TerminalSpec {
     /**
      * 返回厂商
-     * @return
+     * @return 厂商
      */
 	String getManufacturer();
 	

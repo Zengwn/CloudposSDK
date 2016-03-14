@@ -24,7 +24,7 @@ import com.unionpay.cloudpos.OperationResult;
 public interface IDCardReaderOperationResult extends OperationResult {
     /**
      * 返回身份证对象。
-     * @return
+     * @return IDCard
      */
     IDCard getIDCard();
 }

@@ -69,27 +69,27 @@ public interface LEDDevice extends Device {
    
     /**
      *  使某个led灯进行闪烁，异步方法，可以被取消。
-     * @param delayTurnOn-指定Led灯所需要打开的时间。单位ms。
-     * @param delayTurnOff-指定Led灯所需要关闭的时间。单位ms。
-     * @param counts-周期，持续次数。
+     * @param delayTurnOn 指定Led灯所需要打开的时间。单位ms。
+     * @param delayTurnOff 指定Led灯所需要关闭的时间。单位ms。
+     * @param counts 周期，持续次数。
      * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档。
      * */
     void startBlink(long delayTurnOn, long delayTurnOff, int counts)  throws DeviceException;
     
     /**
      *  使某个led灯进行闪烁，异步方法，可以被取消。Led灯的颜色参见{@link LEDDeviceSpec LEDDeviceSpec}颜色定义。
-     * @param 指定Led灯的颜色。
-     * @param delayTurnOn-指定Led灯所需要打开的时间。单位ms。
-     * @param delayTurnOff-指定Led灯所需要关闭的时间。单位ms。
-     * @param counts-周期，持续次数。
+     * @param color 指定Led灯的颜色。
+     * @param delayTurnOn 指定Led灯所需要打开的时间。单位ms。
+     * @param delayTurnOff 指定Led灯所需要关闭的时间。单位ms。
+     * @param counts 周期，持续次数。
      * @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档。
      * */    
     void startBlink(byte color, long delayTurnOn, long delayTurnOff, int counts)  throws DeviceException;
     
     /**
      *  使某个led灯进行闪烁，异步方法，可以被取消。
-     *  @param delayTurnOn-指定Led灯所需要打开的时间。单位ms。
-     *  @param delayTurnOff-指定Led灯所需要关闭的时间。单位ms。
+     *  @param delayTurnOn 指定Led灯所需要打开的时间。单位ms。
+     *  @param delayTurnOff 指定Led灯所需要关闭的时间。单位ms。
      *  @throws DeviceException 具体定义参考{@link DeviceException DeviceException}的文档。
      * */  
     void startBlink(long delayTurnOn, long delayTurnOff)  throws DeviceException;
@@ -103,19 +103,19 @@ public interface LEDDevice extends Device {
     
     /**
      *  使某个led灯进行闪烁，同步方法，不能被取消。 
-     *   @param delayTurnOn-指定Led灯所需要打开的时间。单位ms。
-     *   @param delayTurnOff-指定Led灯所需要关闭的时间。单位ms。
-     *   @param counts-周期，持续次数。
+     *   @param delayTurnOn 指定Led灯所需要打开的时间。单位ms。
+     *   @param delayTurnOff 指定Led灯所需要关闭的时间。单位ms。
+     *   @param counts 周期，持续次数。
      *   @throws DeviceException  具体定义参考{@link DeviceException DeviceException}的文档。
      * */
     void blink(long delayTurnOn, long delayTurnOff, int counts) throws DeviceException;
     
     /**
      *  使某个led灯进行闪烁，同步方法，不能被取消。 Led灯的颜色参见{@link LEDDeviceSpec LEDDeviceSpec}颜色定义。
-     *  @param color -指定Led灯的颜色。
-     *  @param delayTurnOn-指定Led灯所需要打开的时间。单位ms。
-     *  @param delayTurnOff-指定Led灯所需要关闭的时间。单位ms。
-     *  @param counts-周期，持续次数。
+     *  @param color 指定Led灯的颜色。
+     *  @param delayTurnOn 指定Led灯所需要打开的时间。单位ms。
+     *  @param delayTurnOff 指定Led灯所需要关闭的时间。单位ms。
+     *  @param counts 周期，持续次数。
      *  @throws DeviceException  具体定义参考{@link DeviceException DeviceException}的文档。
      * */    
     void blink(byte color , long delayTurnOn, long delayTurnOff, int counts) throws DeviceException;

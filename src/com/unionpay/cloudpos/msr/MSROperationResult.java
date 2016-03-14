@@ -41,7 +41,7 @@ public interface MSROperationResult extends OperationResult {
      * 返回磁条卡数据。
      * 
      * @return 磁条卡数据对象。
-     * @see MSCardData。
+     * @see MSRTrackData
      */
     public MSRTrackData getMSRTrackData();
 }

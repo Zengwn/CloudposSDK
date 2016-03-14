@@ -73,7 +73,7 @@ public interface MSRDevice extends Device, TimeConstants {
      * 
      * @see OperationListener#handleResult
      * @see MSROperationResult
-     * @see MSTrackData
+     * @see MSRTrackData
      */
     void listenForSwipe(OperationListener listener ,int timeout) throws DeviceException;
 

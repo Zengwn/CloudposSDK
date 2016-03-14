@@ -106,7 +106,7 @@ public class IDCard {
     };
     /**
      * 获取姓名
-     * @return
+     * @return 姓名
      */
     public String getName(){
         return name;
@@ -114,7 +114,7 @@ public class IDCard {
 
     /**
      * 获取性别
-     * @return
+     * @return 性别
      */
     public String getSex(){
         return sex;
@@ -122,7 +122,7 @@ public class IDCard {
 
     /**
      * 获取国籍
-     * @return
+     * @return 国籍
      */
     public String getNation(){
         int nationcode = Integer.parseInt(nation);
@@ -140,7 +140,7 @@ public class IDCard {
 
     /**
      * 获取出生日期
-     * @return
+     * @return 出生日期
      */
     public String getBorn(){
         return birthday;
@@ -148,7 +148,7 @@ public class IDCard {
 
     /**
      * 获取地址
-     * @return
+     * @return 地址
      */
     public String getAddress(){
         return address;
@@ -156,7 +156,7 @@ public class IDCard {
 
     /**
      * 获取身份证号
-     * @return
+     * @return 身份证号
      */
     public String getIDCardNo(){
         return idcardno;
@@ -164,7 +164,7 @@ public class IDCard {
 
     /**
      * 获取颁发部门
-     * @return
+     * @return 颁发部门
      */
     public String getGrantDept(){
         return grantdept;
@@ -172,14 +172,14 @@ public class IDCard {
 
     /**
      * 获取有效期开始日期
-     * @return
+     * @return 有效期开始日期
      */
     public String getValidFromDate(){
         return validFromDate;
     };
     /**
      * 获取有效期结束日期
-     * @return
+     * @return 有效期结束日期
      */
     public String getValidToDate(){
         return validToDate;
@@ -187,7 +187,7 @@ public class IDCard {
 
     /**
      * 获取其他保留信息
-     * @return
+     * @return 其他保留信息
      */
     public String getReserved(){
         return reserved;
@@ -195,7 +195,7 @@ public class IDCard {
 
     /**
      * 获取对加密数据解密后的身份证相片
-     * @return
+     * @return 对加密数据解密后的身份证相片
      */
     public Bitmap getPicture(){
         

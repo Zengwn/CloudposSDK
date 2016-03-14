@@ -18,13 +18,13 @@ package com.unionpay.cloudpos;
 public interface TimeConstants {
     /**
      * 秒，比如等待3秒：
-     * <code>wait( 3 * SEC )</code>
+     * <code>wait( 3 * SECOND )</code>
      */
     int SECOND = 1000;
 
     /**
      * 毫秒，比如等待3毫秒：
-     * <code>wait( 3 * MSEC )</code>
+     * <code>wait( 3 * MilliSECOND )</code>
      */
     int MilliSECOND = 1;
 

@@ -1,6 +1,7 @@
 com.unionpay.cloudpos
 com.unionpay.cloudpos.card
 com.unionpay.cloudpos.cashdrawer
+com.unionpay.cloudpos.emv
 com.unionpay.cloudpos.hsm
 com.unionpay.cloudpos.idcardreader
 com.unionpay.cloudpos.led
